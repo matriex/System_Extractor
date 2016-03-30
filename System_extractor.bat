@@ -201,8 +201,8 @@ if '%errorlevel%' NEQ '0' (
     exit /B
 
 :start
-::If you are copying these then you should be ashamed 
-::of your self asshole Instead use your brain to created
+::If you are copying this then you should be ashamed 
+::of yourself asshole Instead use your brain to create
 ::something else.    -Thanks 
 SET count=1 
  FOR %%G IN (.,..,...,....,.....) DO (
