@@ -2,7 +2,7 @@
 
 usage:
 
-Used to extract system.new.dat files of ROM's
+Used to extract system.new.dat files of ROM's , can be able to easily extract .dat files without need of cmd lines.
 
 Note : Repack does not works with all ROM's due to sah1_check, present in updater-script
 or I dont know how is it possible to have a double sha1_check of a single file and both sha1_check are different
