@@ -122,8 +122,12 @@ echo ::  current folder and press enter                                       ::
 echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 echo.
 pause
+cls
 echo.
 if not exist system\app goto stop1
+echo.
+echo.
+if exist system\app echo        Found System FOLDER
 echo.
 bin\make_ext4fs.exe -s -l 2048M system.img system
 echo.
@@ -190,13 +194,16 @@ if '%errorlevel%' NEQ '0' (
 :PERM
     echo Set UAC = CreateObject^("Shell.Application"^) >> "%temp%\getadmin.vbs"
     set params = %*:"=""
-    echo UAC.ShellExecute "cmd.exe", "/c %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs"
+    echo UAC.ShellExecute "cmd.exe", "/c "%0" %params%", "", "runas", 1 >> "%temp%\getadmin.vbs"
 
     "%temp%\getadmin.vbs"
     del "%temp%\getadmin.vbs"
     exit /B
 
 :start
+::If you are copying this then you should be ashamed 
+::of yourself asshole Instead use your brain to create
+::something else.    -Thanks 
 SET count=1 
  FOR %%G IN (.,..,...,....,.....) DO (
  ping -n 2 -w 200 127.0.0.1 > nul
@@ -288,6 +295,27 @@ cls
 echo.
 echo  It seems like the extractor not worked with your 
 echo  provided system folder please contact me for help
+echo.
+pause
+goto home
+
+:opensystem
+cls
+::Under Construction
+if not exist system goto stop10
+%SystemRoot%\explorer.exe "system"
+echo.
+echo        Opened
+echo.
+pause
+goto home
+
+:stop10
+echo.
+echo.
+echo There is no system folder found!
+echo this implies that this extractor 
+echo not worked with your .DAT files
 echo.
 pause
 goto home
