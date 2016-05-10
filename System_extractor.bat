@@ -194,16 +194,13 @@ if '%errorlevel%' NEQ '0' (
 :PERM
     echo Set UAC = CreateObject^("Shell.Application"^) >> "%temp%\getadmin.vbs"
     set params = %*:"=""
-    echo UAC.ShellExecute "cmd.exe", "/c "%0" %params%", "", "runas", 1 >> "%temp%\getadmin.vbs"
+    echo UAC.ShellExecute "cmd.exe", "/c %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs"
 
     "%temp%\getadmin.vbs"
     del "%temp%\getadmin.vbs"
     exit /B
 
-:start
-::If you are copying this then you should be ashamed 
-::of yourself asshole Instead use your brain to create
-::something else.    -Thanks 
+:start 
 SET count=1 
  FOR %%G IN (.,..,...,....,.....) DO (
  ping -n 2 -w 200 127.0.0.1 > nul
