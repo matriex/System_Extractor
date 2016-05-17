@@ -11,10 +11,17 @@ or I dont know how is it possible to have a double sha1_check of a single file a
 Changelogs:-
 
 ver : 1.0 (initial)
+
  ->Extract
+ 
 ver : 2.0
+
  ->Exrtact & Repack
+ 
 ver : 3.0 (currently)
+
  ->Extract, Repack, System Unpack.
+ 
 ver:4.0 soon
+
  -> Some cool features
