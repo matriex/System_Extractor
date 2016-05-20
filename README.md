@@ -45,3 +45,5 @@ VERSION:4.0
  DOWNLOAD
 
  https://github.com/matriex/System_Extractor.git
+ 
+ https://codeload.github.com/matriex/System_Extractor/zip/master
