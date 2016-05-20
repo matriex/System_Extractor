@@ -1,27 +1,47 @@
 # System_Extractor
 
-usage:
+Discription:
 
-Used to extract system.new.dat files of ROM's , can be able to easily extract .dat files without need of cmd lines.
+for real, Since there is no extractor that worked for me on XDA or i can't understand it so 
+I planned to create extractor my self.
 
-Note : Repack does not works with all ROM's due to sah1_check, present in updater-script
-or I dont know how is it possible to have a double sha1_check of a single file and both sha1_check are different
+It can possibly
+
+ Extract system.new.dat
+ Repack system.new.dat
+ Unpack system.img
+ repack system.img
+ Sign ZIP files
+
+Hope you liked my worked.
+
+Usage:
+
+Extract system.new.dat files of ROM's , can be able to easily extract .dat files without need of cmd lines.
+
+Note : Repack works with all ROM's
 
 
-Changelogs:-
+Version:
 
-ver : 1.0 (initial)
+VERSION: 1.0 (initial)
 
- ->Extract
+ ->Extractor
  
-ver : 2.0
+VERSION: 2.0
 
  ->Exrtact & Repack
  
-ver : 3.0 (currently)
+VERSION: 3.0
 
  ->Extract, Repack, System Unpack.
  
-ver:4.0 soon
+VERSION:4.0
 
- -> Some cool features
+ ->Extract, Repack, System Unpack , Repack (IMAGE) , Sign ZIP. 
+   Aready Uploaded New Script 
+ 
+ 
+ DOWNLOAD
+
+ https://github.com/matriex/System_Extractor.git
