@@ -5,19 +5,22 @@ Discription:
 for real, Since there is no extractor that worked for me on XDA or i can't understand it so 
 I planned to create extractor my self.
 
-It can possibly 
-
-do 
+It can possibly do
 
  Extract system.new.dat
+ 
  Repack system.new.dat
+ 
  Unpack system.img
+ 
  repack system.img
+ 
  Sign ZIP files
  
- done
+ 
 
 Hope you liked my worked.
+
 
 Usage:
 -------
@@ -26,12 +29,14 @@ Extract system.new.dat files of ROM's , can be able to easily extract .dat files
 
 Note : Repack works with all ROM's
 
+
 Requirments:
 ------------
 
  * Python 3.x version must be installed 
 
  * Java Development kit or JAVA SDK must be installed for ZIP sign
+
 
 Versions:
 ---------
