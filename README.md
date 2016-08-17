@@ -1,6 +1,6 @@
 # System_Extractor
 
-Discription:
+Discription
 -------------
 for real, Since there is no extractor that worked for me on XDA or i can't understand it so 
 I planned to create extractor my self.
@@ -22,7 +22,7 @@ It can possibly do
 Hope you liked my worked.
 
 
-Usage:
+Usage
 -------
 
 Extract system.new.dat files of ROM's , can be able to easily extract .dat files without need of cmd lines.
@@ -30,7 +30,7 @@ Extract system.new.dat files of ROM's , can be able to easily extract .dat files
 Note : Repack works with all ROM's
 
 
-Requirments:
+Requirments
 ------------
 
  * Python 3.x version must be installed 
@@ -38,7 +38,7 @@ Requirments:
  * Java Development kit or JAVA SDK must be installed for ZIP sign
 
 
-Versions:
+Versions
 ---------
 
 * VERSION: 1.0 (initial)
