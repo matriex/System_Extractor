@@ -6,8 +6,6 @@ setlocal EnableDelayedExpansion
 cd /d "%~dp0"
 goto admin_
 ::
-::  Visit xda devs/system.new.dat extractor by matrix
-::
 ::
 
 :errorNoPython
@@ -41,22 +39,18 @@ echo.
 bin\cecho       3 - {0b}Unpack{#} {0f}system.img{#}
 echo.
 echo.
-bin\cecho       4 - {0b}Repack{#} {0f}system to system.img{#}
+bin\cecho       4 - {0b}Sign{#} {0f}ZIP files{#}
 echo.
 echo.
-bin\cecho       5 - {0b}Sign{#} {0f}ZIP files{#}
-echo.
-echo.
-bin\cecho       6 - {0b}Exit{#}  
+bin\cecho       5 - {0b}Exit{#}  
 echo.
 echo.
 set /p web=Type option:
 if "%web%"=="1" goto extractor
-if "%web%"=="6" goto ex_t
-if "%web%"=="4" goto Image_repack
+if "%web%"=="5" goto ex_t
 if "%web%"=="2" goto repack
 if "%web%"=="3" goto Image_unpack
-if "%web%"=="5" goto sign
+if "%web%"=="4" goto sign
 echo.
 echo Select a valid option.....
 echo ping -n 200 -w 200 127.0.0.1 > nul
@@ -132,28 +126,17 @@ bin\Imgextractor.exe system.img.img -i
 del system.img.img
 del system.new.dat
 del system.transfer.list
-del file_contexts
-if exist system RD /S /Q system
-MOVE system_ system
+::MOVE system_ system
 echo.
 echo.
-bin\cecho Done. Go to the folder {0a}"system"{#}
+bin\cecho Files are found in {0a}"system_"{#}
 echo.
 pause
 goto home
+                                                              
+:://///////                           End of extraction          /////////
 
-::                                                                                   ::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::                             End of script                                         ::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::               CYANOGENMOD REPACK SCRIPT (C)MATRIX                                    ::
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:://///////////                    Repack Script          ////////////
 :repack
 cls
   echo.
@@ -171,34 +154,24 @@ cls
   echo.
   echo.
   echo.
-  bin\cecho     1 - {0b}Repack{#} ( {0f}file_contexts is required{#} )
+::bin\cecho     1 - {0b}Manually{#} (Enter size in bytes)
   echo.
   echo.
-  bin\cecho     2 - {0b}GO back{#}
+  bin\cecho     2 - {0b}Automatically{#} (Takes lots of time)
   echo.
   echo.
   set /p web2=Type option: 
-  if "%web2%"=="1" goto cm_pack
-  if "%web2%"=="2" goto home
+  ::if "%web2%"=="1" goto man_
+if "%web2%"=="2" goto auto_
 goto repack
 
 
+:man
+Echo under construction
 
-:cm_pack
+:auto_
 cls
-    
-   if exist system (
-      rd /s /q system
-        md system
-		  echo.
-            bin\cecho  {0a}Cleaning System folder before began....{#}
-             echo.
-            sleep 1
-                    )
-			goto done_1		
-         :done_1
-	   cls
-    echo.
+  echo.
   echo.
 if not exist system md system
    echo.
@@ -298,10 +271,9 @@ echo.
   bin\fciv -sha1 system.new.dat >> sha1_system.txt
   echo.
   echo.
-  bin\cecho DONE {0a}"system.transfer.list"{#} and {0a}"system.new.dat"{#} created in current folder
-  echo. 
-  echo.
-  bin\cecho just copy it(both) to your ROM also keep {0a}"sha1_system.txt"{#} and follow my guide
+  echo  system.new.dat and system.transfer.list is created 
+Echo.
+  Echo   from here head on to the guide
   echo.
   echo.
   del file_contexts
@@ -332,27 +304,10 @@ IF "%opt%"=="y" goto cm_pack
 IF "%opt%"=="n" goto home
 pause
 goto cm_pack
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::                               END OF SCRIPT                                     ::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
- 
- 
+:::::::::::END////////////
 
-
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::                               IMAGE UNPACK SCRIPT                                         ::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::///////        IMAGE UNPACK.  ////////
 :Image_unpack
-cls
-echo.
-if exist system\app (
-rd /s /q system
-echo.
-bin\cecho  {0a}Cleaning folder before began....{#}
-echo.
-sleep 2
-)
 cls
 echo.
 echo.
@@ -375,344 +330,30 @@ echo.
 echo  wait aproxx 2-3 minutes
 echo.
 bin\Imgextractor.exe system.img -i
-if exist system rd /s /q system
-MOVE system_ system
-del system.img
+::del system.img
 echo.
-echo Done go to "system" folder of current directory
-echo.
+Echo.
+Echo.
+Echo      Files are found in system_ folder
+Echo.
 pause
 goto home
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::                               END OF SCRIPT - IMAGE                                       ::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::                               IMAGE REPACK SCRIPT                                         ::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::REPACK/Image_repack/
-:Image_repack
-cls
-echo.
-if exist system\app (
-rd /s /q system
-echo.
-bin\cecho  {0a}Cleaning system folder before began....{#}
-echo.
-sleep 2
-)
-cls
-echo.
-if not exist system md system
-echo  /////////////////////////////////////////////////////////////////////////////
-echo  /                                                                           /
-bin\cecho  /   {0f}Instructions{#}                                                            / 
-echo.
-echo. /                                                                           /
-echo  /   Copy all your sub folders/files (like /app,/bin,/lib build.prop etc.)   / 
-bin\cecho  /   to {0a}"system"{#} folder  present in current directory                        / 
-echo.
-echo  /                                                                           /
-echo  /////////////////////////////////////////////////////////////////////////////
-echo.
-pause
-goto cmatrix
-
-::REPACK/Image_repack/CMATRIX
-:cmatrix
-cls
-echo.
-if not exist system\app goto stop1
-echo.
-bin\cecho              {0f}SYSTEM FOLDER TO IMAGE FILE{#}  
-echo.
-echo         ______________________________________
-echo.
-echo.
-bin\cecho   1 - {0a}Repack "system folder to sparse image file"{#}
-echo.
-echo.
-bin\cecho   2 - {0a}Repack "system folder to raw image file"{#}
-echo.
-echo.
-bin\cecho   3 - {0a}Go back{#}
-echo.
-echo.
-set /p SEL=Type option : 
-if "%SEL%"=="1" goto sparse
-if "%SEL%"=="2" goto raw
-if "%SEL%"=="3" goto home
-echo.
-echo Select a valid option.....
-echo ping -n 200 -w 200 127.0.0.1 > nul
-if nul goto cmatrix
-echo.
-
-
-::::::::::::::::::::::::::::::::::::::SPARSE::IMAGE::SCRIPT::::::::::::::::::::::::::::::::::::
-
-:sparse
-cls 
-echo.
-echo.
-bin\cecho   ////////////  {0f}SYSTEM FOLDER TO SPARSE IMAGE{#}  \\\\\\\\\\\\ 
-echo.
-echo.
-echo.
-echo.
-bin\cecho    1 - {0a}Convert automatically{#} (Precise)
-echo.
-echo.
-bin\cecho    2 - {0a}Convert Manually{#}  (Enter size)
-echo.
-echo.
-bin\cecho    3 - {0a}GO back{#}  (Manual)
-echo.
-echo.
-echo.
-set /p SPR=Type option : 
-if "%SPR%"=="1" goto auto
-if "%SPR%"=="2" goto man
-if "%SPR%"=="3" goto cmatrix
-if nul goto sparse
-
-::REPACK/Image_repack/CMATRIX/SPARSE/AUTO
-:auto
-cls
-set /A size=300
-echo.
-echo   This will take some time 4-5 minutes 
-echo   depends upon your system folder size 
-echo. 
-sleep 3 
-echo.
-goto loop2
-
-
-:loop2
-echo.
-   set /A size=%size%+1
-   bin\make_ext4fs.exe -s -l %size%M system.img system >> bin\log_size.txt
-   cls
-   echo.
-   echo    Calculating Size Please Wait  
-   echo    size %size% (increament By 1)
-   echo.
-   if not exist system.img goto loop2
-if exist system.img goto next2
-
-::REPACK/Image_repack/CMATRIX/SPARSE/AUTO/LOOP2/NEXT2
-:next2
-cls 
-echo.
-echo     Done sparse system.img created in current folder   
-echo.
-pause
-goto home
-
-::REPACK/Image_repack/CMATRIX/SPARSE/MAN
-:man
-cls
-echo.
-echo.
-echo. 
-echo.
-echo /////////////////////////////////////////////////////////////
-echo /                                                           /
-bin\cecho /   {0f}Instructions{#}                                            /
-echo.
-echo /                                                           /
-echo /   Please Enter Size manually.Just select system folder    /
-echo /   properties and copy current size                        /
-bin\cecho /   {0f}Example - Size :      477.29 MB (500,465,571 bytes){#}     /
-echo.
-echo /   Only type 477 do not type the decimal part or MB        /
-echo /                                                           /
-echo /////////////////////////////////////////////////////////////
-echo.
-echo.
-set /p size2=Type size:
-echo.
-if "%size2%"=="%size2%" echo    You Have entered size %size2% 
-echo.
-echo.
-set /p tpe=Modify/continue (y/n)? default: y):
-if "%tpe%"=="y" goto man
-if "%tpe%"=="n" goto con
-if "%tpe%"=="Y" goto man
-if "%tpe%"=="N" goto con
-goto con
-
-
-:con
-cls
-set /A size3=%size2%+100
-echo.
-echo.
-echo    Space required in system partition is %size3%
-echo.
-echo     Wait aproxx 30 sec...
-echo.
-bin\make_ext4fs.exe -s -l %size3%M system.img system
-echo.
-cls
-echo.
-echo.
-echo.
-if exist system.img bin\cecho     {0f}Done created sparse system.img in current directory{#}
-if not exist system.img goto sizr
-echo.
-echo.
-pause
-goto home 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 
-:::::::::::::::::::::::::::::::::::RAW::IMAGE::SCRIPT::END::::::::::::::::::::::::::::::::::
-
-:raw
-cls 
-echo.
-echo.
-bin\cecho   ////////////  {0f}SYSTEM FOLDER TO RAW IMAGE (ext4){#}  \\\\\\\\\\\\ 
-echo.
-echo.
-echo.
-echo.
-bin\cecho    1 - {0a}Convert automatically{#} (Precise)
-echo.
-echo.
-bin\cecho    2 - {0a}Convert Manually{#}  (Enter size)
-echo.
-echo.
-bin\cecho    3 - {0a}GO back{#}  (Manual)
-echo.
-echo.
-echo.
-set /p RAW=Type option : 
-if "%RAW%"=="1" goto autor
-if "%RAW%"=="2" goto manr
-if "%RAW%"=="3" goto cmatrix
-goto raw
 
 
-:autor
-cls
-set size=500
-echo.
-echo   This option will automatically find
-echo   your system folder size but it will
-echo   take some time 4-5 minutes depends 
-echo   upon your system folder size 
-echo.  
-echo.
-pause
-goto loop3
 
 
-:loop3
-echo.
-set /A size=%size%+1
-::048576
-bin\make_ext4fs.exe -s -l %size%M system.img system >> bin\log_size.txt
-cls
-echo.
-echo    Calculating Size Please Wait
-echo    size %size% (increament By 1)
-echo.
-if not exist system.img goto loop3
-if exist system.img goto next3
 
 
-:next3
-cls
-echo.
-echo       Wait aproxx 30 sec
-echo.
-bin\simg2img system.img system_raw.img
-echo.
-del system.img
-echo.
-echo            Size of RAW file is %size%MB
-echo.
-echo    Done RAW system_raw.img created in current folder   
-echo.
-echo.
-set size=0
-pause
-goto home
 
-
-:manr
-cls
-echo.
-echo.
-echo. 
-echo.
-echo /////////////////////////////////////////////////////////////
-echo /                                                           /
-bin\cecho /   {0f}Instructions{#}                                            /
-echo.
-echo /                                                           /
-echo /   Please Enter Size manually.Just select system folder    /
-echo /   properties and copy current size                        /
-bin\cecho /   {0f}Example - Size :      477.29 MB (500,465,571 bytes){#}     /
-echo.
-echo /   Only type 477 do not type the decimal part or MB        /
-echo /                                                           /
-echo /////////////////////////////////////////////////////////////
-echo.
-echo.
-set /p sizer=Type size :
-echo.
-if "%sizer%"=="%sizer%" echo    You Have entered size %sizer% 
-echo.
-echo.
-set /p tper=Modify/continue (y/n)? (default: n):
-if "%tper%"=="y" goto manr
-if "%tper%"=="n" goto conr
-if "%tper%"=="Y" goto manr
-if "%tper%"=="N" goto conr
-goto conr
-
-
-:conr
-cls
-set /A sizer2=%sizer%+100
-echo.
-echo.
-echo    Space required in system partition is %sizer2%
-echo.
-echo     Wait aproxx 30 sec...
-echo.
-bin\make_ext4fs.exe -s -l %sizer2%M system.img system
-echo.
-echo.
-bin\simg2img system.img system_raw.img
-cls
-echo.
-del system.img
-echo.
-echo.
-if exist system_raw.img bin\cecho     {0f}Done created RAW system.img in current directory{#}
-if not exist system_raw.img goto sizr
-echo.
-echo.
-pause
-goto home
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::                            END OF IMAGE REPACK SCRIPT                             ::                  
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::                            Sign Zip Files Script                                  ::                  
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :sign
-cls
-if exist sign_files goto remove4 
+
+Cls
 if not exist sign_files mkdir sign_files
 echo.
 echo.
@@ -721,9 +362,6 @@ echo.
 echo.
 echo.
 echo.
-if exist sign_files goto next1
-
-:next1
 echo //////////////////////////////////////////////////////////
 echo /                                                        /
 bin\cecho / Place your zip file in the {0a}"sign_files"{#} folder         /
@@ -868,9 +506,6 @@ if '%errorlevel%' NEQ '0' (
     exit /B
 
 :start
-::If you are copying these then you should be ashamed 
-::of your self. Instead use your brain to created
-::something else.    -Thanks 
 SET count=1 
  FOR %%G IN (.,..,...) DO (
  ping -n 2 -w 200 127.0.0.1 > nul
