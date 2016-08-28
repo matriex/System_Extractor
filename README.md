@@ -2,32 +2,10 @@
 
 Discription
 -------------
-for real, Since there is no extractor that worked for me on XDA or i can't understand it so 
-I planned to create extractor my self.
-
-It can possibly do
-
- Extract system.new.dat
- 
- Repack system.new.dat
- 
- Unpack system.img
- 
- repack system.img
- 
- Sign ZIP files
- 
- 
-
-Hope you liked my worked.
+This extractor is for extracting system.new.dat in easy method without using commandline ,It is a set of commands which is written in batch script to speed up extraction of dat and IMG* files
 
 
-Usage
--------
-
-Extract system.new.dat files of ROM's , can be able to easily extract .dat files without need of cmd lines.
-
-Note : Repack works with all ROM's
+(*Every image files can't be extracted with this extractor ,because image binary has its limit)
 
 
 Requirments
@@ -35,27 +13,36 @@ Requirments
 
  * Python 3.x version must be installed 
 
- * Java Development kit or JAVA SDK must be installed for ZIP sign
+ * Java Development kit or JAVA SDK must be installed for ZIP signing
 
 
-Versions
----------
+NOTE
+-----
 
-* VERSION: 1.0 (initial)
+ * Repack for android nought N does not works
+ 
+ * Repack of CM13 works fine 
+  
+ * Image repack does not works and will be removed from next script 
+
+Released scripts
+-----------------
+
+* SCRIPT : 1.0 (initial)
 
  ->Extractor
  
-* VERSION: 2.0
+* SCRIPT : 2.0
 
  ->Exrtact & Repack
  
-* VERSION: 3.0
+* SCRIPT : 3.0
 
  ->Extract, Repack, System Unpack.
  
-* VERSION:4.0
+* SCRIPT :4.0
 
- ->Extract, Repack, System Unpack , Repack (IMAGE) , Sign ZIP. 
+ ->Extract, Repack, System Unpack , Sign ZIP. 
    Aready Uploaded New Script 
  
  
@@ -63,7 +50,9 @@ Versions
  ---------
 
  git clone https://github.com/matriex/System_Extractor.git
+ 
                   or direct
+                  
  https://codeload.github.com/matriex/System_Extractor/zip/master
  
  
