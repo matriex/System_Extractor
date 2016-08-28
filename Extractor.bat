@@ -5,22 +5,10 @@ setlocal EnableDelayedExpansion
 ::NORMAL COLS=82 LINES=25
 cd /d "%~dp0"
 goto admin_
-::goto home
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::                                                                        ::
-:: Copyright (c) 2016 - matrixex   (@xda devs)                            ::
-::                                                                        ::
-:: This script is free you can edit modify and make it better as you wish ::
-:: This script file is intended for personal and/or educational use only. :: 
-:: It may not be duplicated for monetary benefit or any other purpose     ::  
-:: without the permission of the creater.                                 ::
-:: Binaries copyright all right reserved                                  ::
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-
-
-
+::
+::  Visit xda devs/system.new.dat extractor by matrix
+::
+::
 
 :errorNoPython
 echo.
