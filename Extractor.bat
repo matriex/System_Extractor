@@ -6,7 +6,19 @@ setlocal EnableDelayedExpansion
 cd /d "%~dp0"
 goto admin_
 ::
-::
+:: I really over did the warning works ,like,if
+::a file not found in directory, i use
+::breakers like stop (for terminating the
+::current process) its all for better
+::understanding for users , but its also
+::foolishnes,  it consumed a lots of time ,
+::and i also bored because of typing and
+::modifying script a lot , so i decided to
+::remove warning and introducing the
+::direct way , that include no warning.
+::serioisly this script is getting bigger in
+::size and lines
+
 
 :errorNoPython
 echo.
