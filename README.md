@@ -56,3 +56,10 @@ Released scripts
  https://codeload.github.com/matriex/System_Extractor/zip/master
  
  
+ Contributers
+ -------------
+ 
+> darxmorph
+ 
+> matrixex
+ 
