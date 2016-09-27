@@ -1,43 +1,39 @@
-==========================================================================================
+# REPACK instructions for SYSTEM_EXTRACTOR - MATRIX 
+----------------------------------------------------
+> USE NOTEPAD ++ TO READ THIS
 
-CYANOGENMOD REPACK  (C)MATRIX  2016 18-MAY-16
+# First of all repack "may or may not" works with all ROM's especially CYANOGENMOD
 
-----------------------------------
-PLEASE USE NOTEPAD ++ TO READ THIS
-----------------------------------
-==========================================================================================
+ (follow steps carefully,may be useful for other ROM)
 
-# First of all repack does not works with all ROM's especially CYANOGENMOD
+# INFORMATION 
+  If you are using cyanogenmod ROM , you may found something in updateR-script which is 
+  not found in others, That is  "if range_sha1(........." ,this executs in script after extraction 
+  of system.new.dat , which verifies sah 1 values of system.new.dat , if values are same, the scripts
+  succeeds and the flashing completes , if not then the script returns 
+  abort("system partition has unexpected non-zero contents after OTA update");
+  This problem can be solved by changing the old values of system.new.dat with current one
+  and here is how to do it
+                                          AND
+  also if you script does not contains  "if range_sha1(........." then do not follow this guide , 
+  instead do the repack with original file_contexts and the replace the newley created
+  system.transfer.list and system.new.dat with your old one, it means copy them to your ROM
+  compress it to zip , then flash it to your device.
+  If you founf TWRP ERRORS , then take a screen shot and upload it here on my thread, IF IT IS RELATED TO 
+  SHA_1 , i will provide support otherwise i don't
 
- so here i will explain how to make it work (follow steps carefully,may be useful for other ROM)
- 
---> Things you need
+# Download these for further need
 
   * Extractor.bat
 
-  * cyanogenmod ROM (other may be allowed if they contain file_contexts)
+  * ROM (with file_contexts, or it will be usless)
 
   * Strongly speaking every ROM contains file_contexts some in zip others in boot.img
     only you have to extract them (on boot.img/RAMDISK/file_contexts is found)
 
-  * ZIP signer already included in EXTRACTOR.bat
+  * ZIP sign already included in extractor
   
-  *.. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Let us look down
+# Inst.
 
 Here is a sample of "updateR-script" of my cyanogenmod ROM 
 
@@ -99,9 +95,7 @@ else
 endif;
 
 
-else
-  abort("system partition has unexpected contents after OTA update");
-endif;
+
 
 show_progress(0.020000, 10);
 
@@ -120,7 +114,7 @@ show_progress(0.200000, 10);
    END OF SCRIPT
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- * As you can see in line number 90 , 92 there is range_sha1 check see below eg.
+ * As you can see there is range_sha1 see below eg.
  
 if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "36,0,32770,32849,32851,33331,65535,65536,65538,98304,98306,98385,98387,98867,131071,131072,131074,163840,163842,163921,163923,164403,185342,196608,196610,229376,229378,229457,229459,262144,262146,294912,294914,294993,294995,295475,307199") == "0b20303394271424267e36a0ce7573f1b62ddc0d" then
 
@@ -135,19 +129,19 @@ if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "48,32770,32849,3
        
  
 
- * also line "0b20303394271424267e36a0ce7573f1b62ddc0d"== sha1 sum of system.new.dat
+ * also line "0b20303394271424267e36a0ce7573f1b62ddc0d" is equal to sha1 sum of system.new.dat
  
- *           "16902dcea1b74f8c9451cb2245c51465d949ec7e"== sha1 sum of system.new.dat
+ *           "16902dcea1b74f8c9451cb2245c51465d949ec7e" is equal to sum of system.new.dat
  
- * How amazing REALLY double sha1 check of a single file and both are different(not possible)
+ * How amazing REALLY double sha1 check of a single file and both are different(not possible or I don' knowt)
  
- * BUT THESE ARE NOT ACTUAL SHA_1 SUM OF SYSTEM.NEW.DAT
+ * BUT THESE ARE NOT ACTUAL SHA_1 SUM OF SYSTEM.NEW.DAT ( a/c to me)
   
  * THESE ARE SHA CHECK OF TRANSFER COMMAND LINES(a/c to xpirit's) FOUND found in system.transfer.list of Cm rom's See Below
  
-------------------------------------------------------
-Example OF MY CM13.0 ROM , system.transfer.list  CONTAINS
------------------------------------------------------
+
+> Example OF MY CM13.0 ROM , system.transfer.list  ,CONTAINS
+--------------------------------------------------------------
 3
 130069
 0
@@ -159,44 +153,43 @@ erase 12,66050,97792,131586,163328,186056,196096,197122,228864,229971,261632,262
 
  * you can see here command 
       
-	  new 36,0,32770,32849,32851.........to the end  (line 155 of this script)
+	  new 36,0,32770,32849,32851.........to the end  
 	  
-	  zero 48,32770,32849,32851,.........to the end  (line 156 of this script)
+	  zero 48,32770,32849,32851,.........to the end  
 	  
-	matches range_sha1(line 90) of updater-script --------->  "36,0,32770,32849,32851,........294995,295475,307199") == "0b20303394271424267e36a0ce7573f1b62ddc0d" then
+	matches range_sha1 of updater-script --------->  "36,0,32770,32849,32851,........294995,295475,307199") == "0b20303394271424267e36a0ce7573f1b62ddc0d" then
 	
-    matches range_sha1(line 92) of updater-script --------->  "48,32770,32849,32851,..........,295475,307199,307200") == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then
+    matches range_sha1 of updater-script --------->  "48,32770,32849,32851,..........,295475,307199,307200") == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then
 
 
- * SO YOU LEARNED HERE THAT system.transfer.list and updater-script has a relation of sha1 and transfer commands
+ * So system.transfer.list and updater-script has a link of sha1 and transfer commands
    I hope you got it
 
- * NOW TURN THIS INTO RIGHT
+ * Now change this into right
  
- * IF YOU USE MY REPACK 
- 
- * THEN YOU WILL GET TWO FILES ,system.new.dat , system.transfer.list
+ * after repack you have two files ,system.new.dat , system.transfer.list
  
  * and one more namley sha1_system.txt which contains sha1 check of system.new.dat
  
  LETS REPACK ROM
  
- 1.first open Extractor.bat
+ 1)first open Extractor.bat
 
- 2.choose option 2 "repack system.new.dat"
+ 2)choose option 2 "repack system.new.dat"
  
- 3.choose 1 --> Repack ( file_contexts is required)
+ 3)choose 1(manual mode) --> Repack ( file_contexts is required)
  
- 4.now then a folder named system is created in current directory
+ 4)Now then a folder named system is created in current directory
    (warning do not keep a old extracted system folder, Extractor will wipe it)
  
- 5.copy your sub folders for example:- addon.d, app, bin, fonts, framework, buile.prop, etc.
-     to system folder (this message will also displayed in extractor)
+ 5)Copy your sub folders for example:- addon.d, app, bin, fonts, framework, buile.prop, etc.
+   to system folder (this message will also displayed in extractor)
    
- 6.Then copy "file_contexts" from ROM to current directory
-   GENERALLY A CM ROM ZIP CONTAINS (others also)
+ 6)Then copy "file_contexts" from ROM to current directory
    
-   ------------------
+# GENERALLY A ROM ZIP CONTAINS
+---------------------------------  
+
    system                (FOLDER)
    META-INF              (FOLDER)
    install               (FOLDER)
@@ -205,29 +198,29 @@ erase 12,66050,97792,131586,163328,186056,196096,197122,228864,229971,261632,262
    system.new.dat        (FILE)
    file_contexts         (FILE)
    boot.img              (FILE)
-   ------------------
-   if you unable to find it(file_contexts) in zip file then extract ramdisk from boot.img
-   look for "file_contexts" inside ramdisk folder
+   
+--------------------------------
+   If you unable to find it(file_contexts) in zip file then extract ramdisk from boot.img
+   look for "file_contexts" inside ramdisk folder(don't ask me how , search xda) 
 
-   Warning : Don not use others "file_contexts" or dummy "file_contexts" , it can cause extractor to loop 
+   IMP : Don not use other "file_contexts" or dummy "file_contexts" , it can cause device to loop 
  
- 7.Hit enter if you have done above 
+ 7)Hit enter if you have done above 
  
- 8.The extractor automatically finds size and creates three files as output :-
+ 8)The extractor creates three files as output :-
    
    system.new.dat
    system.transfer.list
    sha1_system.txt      -->  sha1_sum of system.new.dat
   
- 9.Now copy system.new.dat system.transfer.list to ROM folder
+ 9)Now copy system.new.dat system.transfer.list to ROM folder
  
- 10.Here in my case i get all files as mentioned 
+ 10)Here in my case i get all files as mentioned 
  
- 11. Open system.transfer.list
+ 11)Open system.transfer.list
  
+> In my case it (system.transfer.list) looks like this
 ----------------------------------------------------
-in my case it (system.transfer.list) looks like this
-____________________________------------------------
 
 1
 124680
@@ -235,21 +228,21 @@ erase 2,0,129024
 new 76,0,32,33,164,539,692,696,13549,13550,14263,14264,14313,14314,14374,14375,14507,14520,14522,14527,14657,14670,14672,14677,14805,14818,14820,14825,16941,16942,32767,32768,32770,32801,32802,33307,36711,36714,42767,42774,42988,42989,50105,50107,50114,50120,50141,50142,50143,50162,52431,52432,55597,55600,65535,65536,65537,66042,89668,89674,93810,93811,97042,97043,97070,97122,98100,98304,98306,98337,98338,98843,98844,100859,128209,128212,129023
 -----------------------------------------------------------------------
 
- * This is totally different from old system.transfer.list(see line 149 of this guide)
+ * This is totally different from old system.transfer.list(FOUND ON START OF THIS GUIDE)
  
- 
- * on comparing there is not "zero" command
+ * On comparing there is not "zero" command
 
  * I just copied line new --> "76,0,32,33,............,128212,129023"
  
-   to ,my updater-script--->sha1_check (below)
---------------------------------------------------->
+   from system.transfer.list to updater-script (see below)
+------------------------------------------------------------------------
 if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "76,0,32,33,164,539,692,696,13549,13550,14263,14264,14313,14314,14374,14375,14507,14520,14522,14527,14657,14670,14672,14677,14805,14818,14820,14825,16941,16942,32767,32768,32770,32801,32802,33307,36711,36714,42767,42774,42988,42989,50105,50107,50114,50120,50141,50142,50143,50162,52431,52432,55597,55600,65535,65536,65537,66042,89668,89674,93810,93811,97042,97043,97070,97122,98100,98304,98306,98337,98338,98843,98844,100859,128209,128212,129023") == "0b20303394271424267e36a0ce7573f1b62ddc0d" then
 
 if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "76,0,32,33,164,539,692,696,13549,13550,14263,14264,14313,14314,14374,14375,14507,14520,14522,14527,14657,14670,14672,14677,14805,14818,14820,14825,16941,16942,32767,32768,32770,32801,32802,33307,36711,36714,42767,42774,42988,42989,50105,50107,50114,50120,50141,50142,50143,50162,52431,52432,55597,55600,65535,65536,65537,66042,89668,89674,93810,93811,97042,97043,97070,97122,98100,98304,98306,98337,98338,98843,98844,100859,128209,128212,129023") == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then
---------------------------------------------------->
+-----------------------------------------------------------------------
 
- * As you can see above what i have done
+ * As you can see above what i have done ,I replaced transfer commands in 
+ if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "REPLACED COMMANDS") == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then
  
  * Now just look at this
 
@@ -373,14 +366,13 @@ Thats all just REPACK ROM to ZIP
 
 AND DO NOT FORGET to sign ROM with EXTRACTOR
 
-JUST FLASH IT AND SEE MAGIC
+JUST FLASH IT AND SEE IT WORKS OR NOT , ALSO DONT PANIC , WAIT FOR 5 MINUTES TO BOOT
 
-//////////////
-Precautions://
-//////////////
+I hope though you got it , comment if you need help, or confused in this 
 
- * Please do not copy my lines in your updater-script just copy your own system.transfer.list lines
-   and your sha1_system value (yes, some of course do this. please try to understand)
+# NOTE
+Please do not copy my lines in your updater-script just copy your own system.transfer.list lines
+and your sha1_system value (yes, some of course do this. please try to understand)
 
    
    
