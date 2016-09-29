@@ -4,7 +4,6 @@
 #          FILE: sdat2img.py
 #       AUTHORS: xpirt - luxi78 - howellzhu
 #          DATE: 2015-10-11 16:33:32 CST
-#      USED IN : matrix system_extractor
 #====================================================
 
 import sys, os
