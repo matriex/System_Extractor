@@ -40,7 +40,7 @@ Released scripts
 
  ->Extract, Repack, System Unpack.
  
-* SCRIPT :4.0
+* SCRIPT :4.0 ~ 4.5
 
  ->Extract, Repack, System Unpack , Sign ZIP. 
    Aready Uploaded New Script 
