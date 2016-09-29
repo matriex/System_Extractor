@@ -1,5 +1,5 @@
 @echo off
-title Extract and Repack system.new.dat [4.0]
+title Extract and Repack system.new.dat [4.5]
 setlocal EnableDelayedExpansion
 
 ::mode con:cols=82 lines=27
