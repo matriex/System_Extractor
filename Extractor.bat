@@ -548,10 +548,7 @@ if '%errorlevel%' NEQ '0' (
     del "%temp%\admin.vbs"
     exit /B
 
-:start
-::If you are copying these then you should be ashamed 
-::of your self. Instead use your brain to created
-::something else.    -Thanks 
+:start 
 SET count=1 
  FOR %%G IN (.,..) DO (
  ping -n 2 -w 200 127.0.0.1 > nul
