@@ -369,7 +369,7 @@ echo   You have to copy your folders that is /app ,/bin ,/lib
 echo.
 echo   build.prop to system folder ,hope you got it
 echo.
-echo   confusing ohh c'mon just copy sub folders of your rom 
+echo   confusing ohh c-mon just copy sub folders of your rom 
 echo.
 echo   to system folder also copy file_contexts to current directory   
 echo. 
