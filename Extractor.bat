@@ -566,7 +566,7 @@ SET count=1
  goto check
  
 :check
-::Section for checking recent activity
+::Section for checking recent activity'
 if not exist %temp% goto home
 if exist %temp%\date_log.txt goto _recent
 set activity="  First use "
