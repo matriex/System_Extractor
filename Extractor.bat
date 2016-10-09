@@ -243,7 +243,7 @@ SET /P "SIZE=TYPE THE SIZE IN MB : "
    echo.
    echo   directly copy system.new.dat and system.transfer.list to ROM folder and 
    echo.
-   echo   repack/zip it and flash it.
+   echo   repack/zip it and flash it.'
    echo.
    echo.
    pause   
