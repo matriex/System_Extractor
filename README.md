@@ -50,8 +50,10 @@ Released scripts
  ---------
 
  CMDLINE git clone https://github.com/matriex/System_Extractor.git
-                  
- [Extractor 4.5!](https://codeload.github.com/matriex/System_Extractor/zip/master)
+                
+                OR
+                
+ [Extractor 4.5](https://codeload.github.com/matriex/System_Extractor/zip/master)
  
  
  Contributers
