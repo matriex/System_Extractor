@@ -49,13 +49,9 @@ Released scripts
  DOWNLOAD
  ---------
 
- CMDLINE
-
- git clone https://github.com/matriex/System_Extractor.git
- 
- DIRECT
+ CMDLINE git clone https://github.com/matriex/System_Extractor.git
                   
- https://codeload.github.com/matriex/System_Extractor/zip/master
+ [Extractor 4.5!](https://codeload.github.com/matriex/System_Extractor/zip/master)
  
  
  Contributers
