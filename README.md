@@ -15,7 +15,7 @@ This extractor is for extracting system.new.dat in easy method without using com
  * Java Development kit or JAVA SDK must be installed for ZIP signing
 
 
-## NOTE
+## Note
 
  * Repack for android nought N does not works
  
@@ -45,14 +45,11 @@ This extractor is for extracting system.new.dat in easy method without using com
  
 ## DOWNLOAD
 
- CMDLINE git clone https://github.com/matriex/System_Extractor.git
-                
-                OR
-                
+ CMDLINE git clone https://github.com/matriex/System_Extractor.git    
+                OR             
  [Extractor 4.5](https://codeload.github.com/matriex/System_Extractor/zip/master)
  
- 
- ## Contributers
+## Contributers
  
 - darxmorph
  
