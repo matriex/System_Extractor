@@ -27,19 +27,19 @@ This extractor is for extracting system.new.dat in easy method without using com
 
 * SCRIPT : 1.0 (initial)
 
- * Extractor
+ - Extractor
  
 * SCRIPT : 2.0
 
- * Exrtact & Repack
+ - Exrtact & Repack
  
 * SCRIPT : 3.0
 
- * Extract, Repack, System Unpack.
+ - Extract, Repack, System Unpack.
  
 * SCRIPT :4.0 ~ 4.5
 
- * Extract, Repack, System Unpack , Sign ZIP. 
+ - Extract, Repack, System Unpack , Sign ZIP. 
    Aready Uploaded New Script 
  
  
