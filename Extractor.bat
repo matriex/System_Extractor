@@ -10,8 +10,8 @@ goto admin_
 
 ::/ *  Author :- matrix , darxmophx
 ::  *  Type :- Batch (LINES=778, LENGTH= 20399)
-::  *  UPDATED ON :- Sunday, ‎September ‎25 
-::  *  INFO :- GIT/matrix/System_extractor
+::  *  Last UPDATED ON :- Sunday, ‎September ‎25 
+::  *  INFO :- GIT-HUB/matrix/System_extractor
 ::  * /
 
 :errorNoPython
