@@ -62,86 +62,112 @@ echo Select a valid option.....
 echo ping -n 200 -w 200 127.0.0.1 > nul
 goto home
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::                             Extract Script                                        ::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::                                                                                   ::
 
-:extractor
-cls
-echo.
-echo   ::::::::::::::::::::::::::::::::::::::::::::::::::::
-echo   ::                                                ::
-bin\cecho   :: Copy {0a}"system.new.dat"{#} , {0a}"system.transfer.list"{#} ::
-echo.
-bin\cecho   :: and {0a}"file_contexts"{#} to current folder.         :: 
-echo.
-echo   ::                                                ::
-echo   ::::::::::::::::::::::::::::::::::::::::::::::::::::
-echo.
-pause
-cls
-if not exist system.new.dat goto stop5
-echo.
-if not exist system.transfer.list goto stop6
-echo.
-if not exist file_contexts goto stop7
-echo.
-echo.
-if exist system.new.dat bin\cecho   {0c}found system.new.dat{#}
-echo.
-if exist system.transfer.list bin\cecho   {0c}found system.transfer.list{#}
-echo.
-if exist file_contexts bin\cecho   {0c}found file_contexts{#}
-echo.
-echo.
-echo.
-pause
-echo converting "system.new.dat" to "system.img.ext4"
-echo.
-goto find_python
 
-:find_python
-python --version 2>NUL
- if %ERRORLEVEL% ==0 (goto :python) else (goto :standlone) 
- 
-::
-::(C)Xpirit's sdat2img.py binary
-::
-:python
+
+
+
+::////////////////////          Extract Script              ///////////////////////
+:extractor     ' System.new.dat script
+cls
+ echo.
+    echo   ////////////////////////////////////////////////////
+    echo   /                                                  /
+    bin\cecho   /  Copy {0a}"system.new.dat"{#} , {0a}"system.transfer.list"{#}  /
+    echo.
+    echo   /  to current folder                               / 
+    echo   /                                                  /
+    echo   ////////////////////////////////////////////////////
+    echo.
+    Echo   Hit Enter to continue &pause>nul
+    cls
+      if not exist system.new.dat (cls
+                                   echo.
+								   echo.
+                                   bin\cecho       {0a}"system.new.dat"{#} is not found
+                                   echo.
+								   echo.
+                                   echo    Please copy system.new.dat to current folder
+                                   echo.
+								   set /a web=0
+                                   pause>nul
+                                   goto home
+                                  ) 
+      if not exist system.transfer.list (cls
+                                         echo.
+                                         bin\cecho      {0a}"system.transfer.list"{#} is not found
+                                         echo.
+										 echo.
+                                         echo     Please copy system.transfer.list to current folder
+                                         echo.
+										 set /a web=0
+                                         pause>nul
+                                         goto home
+	                                    )
+      echo.
+      if not exist file_contexts (
+                                  echo #DUMMY FILE >> file_contexts
+                                 )
+	  echo.
+      echo.
+      if exist system.new.dat (  
+						        bin\cecho   {0c}Found system.new.dat{#}
+                                echo.
+                                if exist system.transfer.list (                  
+						                                       bin\cecho   {0c}Found system.transfer.list{#}
+                                                               echo. 
+                                                              )
+		                      )
+	  echo.
+      echo.
+      Echo   Hit Enter to continue &pause>nul
+	  echo.
+	  echo.
+      echo converting "system.new.dat" to "system.img.ext4"
+  echo.
+  python --version 2>NUL 
+goto ans%ERRORLEVEL%  
+
+:ans0
   echo.
   echo.
-  echo    Python is installed 
+  echo      Python is installed
+  echo.
+  bin\cecho   {e0} Unpacking System.new.dat {#}
+  echo.
   echo.
   bin\python\sdat2img.py system.transfer.list system.new.dat system.img.ext4
   IF EXIST system.img.ext4 goto conv_rt
 
-:standlone 
+:ans9009
   echo.
   echo.
-  echo  Python is not installed 
+  echo.     Python not found!
+  echo.     Switching sdat2img.py to spars2ext.exe    
   echo.
   bin\sdat2img.exe system.transfer.list system.new.dat file_contexts
   IF EXIST system.img.ext4 goto conv_rt
   
 :conv_rt
 echo converting "system.img.ext4" to "system"
-if not exist system.img.ext4 goto datstop
-REN system.img.ext4 *.img 
-bin\Imgextractor.exe system.img.img -i
-del system.img.img
-del system.new.dat
-del system.transfer.list
-del file_contexts
-if exist system RD /S /Q system
-MOVE system_ system
-echo.
-echo.
-bin\cecho Done. Go to the folder {0a}"system"{#}
-echo.
+               if not exist system.img.ext4 goto datstop 
+               REN system.img.ext4 *.img 
+               bin\Imgextractor.exe system.img.img -i
+               del system.img.img
+               del system.new.dat
+               del system.transfer.list 
+			   del file_contexts
+			   echo.
+			   echo.
+			   echo.
+if exist system_ bin\cecho   {e0} Files are Found in system_ folder {#}
+                 echo.
+				 echo.
+                 set /a web=0
 pause
 goto home
-::        ----------------------End of script--------------------------   ::
+::/*                 END , LAST UPDATED ON THU, NOVEMBER , 11                        */
+
 
 ::                 CYANOGENMOD REPACK SCRIPT (C)MATRIX                           ::
 :repack
@@ -725,15 +751,8 @@ goto home
 :datstop
 echo.
 echo.
-echo  There is no system.img.ext4  found!
-echo  this implies that this extractor 
-echo  not worked with your .DAT files
-echo  Please contact me , matrix
-echo  and if possible please proide a
-echo  file that contains following info.
-echo  1. dat file size
-echo  2. screenshot(use wordpad, can store images)
-echo  3. mark and copy info on cmd extractor.
+bin\cecho {0c}////////////////////////////////////////////////// {\n}/                                                / {\n}/   There is no system.img.ext4  found!          / {\n}/   this implies that this extractor             / {\n}/   not worked with your .DAT files              / {\n}/   Please contact me , matrix                   / {\n}/   and if possible please proide a              / {\n}/   file that contains following info.           / {\n}/   1. dat file size                             / {\n}/   2. screenshot(use wordpad, can store images) / {\n}/   3. mark and copy info on cmd extractor.      / {\n}/                                                / {\n}//////////////////////////////////////////////////{#}
+echo.
 echo.
 echo  Thanks 
 echo  Regards -matrix
