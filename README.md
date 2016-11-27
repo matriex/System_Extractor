@@ -45,11 +45,11 @@ This extractor is for extracting system.new.dat in easy method without using com
  
 ## DOWNLOAD
 
-     **git clone https://github.com/matriex/System_Extractor.git **
+     git clone https://github.com/matriex/System_Extractor.git
      
 _OR_
                                                      
-     **[Extractor 4.5(https://codeload.github.com/matriex/System_Extractor/zip/master)**
+     https://codeload.github.com/matriex/System_Extractor/zip/master
  
 ## Contributers
  
