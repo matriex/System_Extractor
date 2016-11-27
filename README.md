@@ -10,7 +10,7 @@ This extractor is for extracting system.new.dat in easy method without using com
 
 ## Requirments
 
- * Python 3.x version must be installed 
+ * Python 2.7.x version must be installed , (latest build of 2.7.x) and DO NOT INSTALL PYTHON 3
 
  * Java Development kit or JAVA SDK must be installed for ZIP signing
 
