@@ -1,5 +1,5 @@
 # System_Extractor
-
+# 10-JAN-17 - THE TOOL WILL BE UPDATED SOON ONLY IF ENOUGH RESOURSES ARE AVAILABLE FOR NOUGHT EXTRACT WORKS BUT THE REPACK DOESN'T. 
 ## Discription
 
 This extractor is for extracting system.new.dat in easy method without using commandline ,It is a set of commands which is written in batch script to speed up extraction of dat and IMG* files
