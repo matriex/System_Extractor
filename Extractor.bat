@@ -1,5 +1,5 @@
 @echo off
-title Extract and Repack system.new.dat [4.6]
+title Extract and Repack system.new.dat [4.x]
 setlocal EnableDelayedExpansion
 
 ::mode con:cols=82 lines=27
@@ -10,7 +10,7 @@ goto admin_
 
 ::/ *  Author :- matrix , darxmophx
 ::  *  Type :- Batch (LINES=778, LENGTH= 20399)
-::  *  Last UPDATED ON :- Sunday, ‎September ‎25 
+::  *  Last UPDATED ON : -,-,- 
 ::  *  INFO :- GIT-HUB/matrix/System_extractor
 ::  * /
 
@@ -169,7 +169,7 @@ goto home
 ::/*                 END , LAST UPDATED ON THU, NOVEMBER , 11                        */
 
 
-::                 CYANOGENMOD REPACK SCRIPT (C)MATRIX                           ::
+::                 CYANOGENMOD REPACK SCRIPT 
 :repack
 cls
   echo.
@@ -409,43 +409,32 @@ goto home
 :Image_unpack
 cls
 echo.
-if exist system\app (
-rd /s /q system
-echo.
-bin\cecho  {0a}Cleaning folder before began....{#}
-echo.
-sleep 2
-)
-cls
 echo.
 echo.
-echo.
-echo ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-echo ::                                                        ::
-bin\cecho ::  Copy {0a}system.img{#} to current folder and make sure it is :: 
-echo.
-bin\cecho ::  named as {0a}system.img{#} no other name is allowed          ::
-echo.
-echo ::                                                        ::
-echo ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+echo.                                                         
+echo   Copy system.img to current folder and make sure it is  
+echo   named as system.img                                   
+echo.                                                       
+echo    * Current Folder = Folder where you have placed extractor.bat
 echo.
 echo.
 pause
 echo.
 if exist system.img echo     Found system.img
-if not exist system.img goto stop2
+if not exist system.img (cls &echo. &echo system.img not found , please try again with mentioned name &pause > NUL &goto :home)
 echo.
-echo  wait aproxx 2-3 minutes
+echo  wait aprox 2-3 minutes
+::FOR 
 echo.
-bin\Imgextractor.exe system.img -i
-if exist system rd /s /q system
-MOVE system_ system
-del system.img
+bin\Imgextractor.exe system.img
+if "%errorlevel%"=="0" (if exist system rd /s /q system &MOVE system_ system &del system.img 
 echo.
-echo Done go to "system" folder of current directory
+echo Files = "system" folder
+echo  If the extraction failed then Im sure the Imgage file that you're using
+echo  is sparse format, try again by changing it to ext4 format
 echo.
 pause
-goto home
+goto home)
 ::        ----------------------End of script--------------------------   ::
 
 ::                            Sign Zip Files Script                       ::                  
