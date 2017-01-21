@@ -22,6 +22,8 @@ This extractor is for extracting system.new.dat in easy method without using com
  * Repack of CM13 works fine 
   
  * Image repack does not works and will be removed from next script 
+ 
+ * Check xda thread for more INFO.
 
 ## Released scripts
 
@@ -37,7 +39,7 @@ This extractor is for extracting system.new.dat in easy method without using com
 
  -> Extract, Repack, System Unpack.
  
-* SCRIPT :4.0 ~ 4.5
+* SCRIPT :4.0 ~ 4.x
 
  -> Extract, Repack, System Unpack , Sign ZIP. 
    Aready Uploaded New Script 
