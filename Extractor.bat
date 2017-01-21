@@ -430,8 +430,9 @@ bin\Imgextractor.exe system.img
 if "%errorlevel%"=="0" (if exist system rd /s /q system &MOVE system_ system &del system.img 
 echo.
 echo Files = "system" folder
-echo  If the extraction failed then Im sure the Imgage file that you're using
-echo  is sparse format, try again by changing it to ext4 format
+echo.
+echo  If the extraction failed then your Image file may be sparse format
+echo  try again by converting it to ext4 format by simg2img binary found in bin
 echo.
 pause
 goto home)
