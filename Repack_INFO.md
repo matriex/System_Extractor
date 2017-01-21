@@ -1,4 +1,4 @@
-# REPACK instructions for SYSTEM_EXTRACTOR - MATRIX 
+# REPACK instructions for SYSTEM_EXTRACTOR - MATREIX 
 ----------------------------------------------------
 > USE NOTEPAD ++ TO READ THIS
 
@@ -11,16 +11,16 @@
   not found in others, That is  "if range_sha1(........." ,this executs in script after extraction 
   of system.new.dat , which verifies sah 1 values of system.new.dat , if values are same, the scripts
   succeeds and the flashing completes , if not then the script returns 
-  abort("system partition has unexpected non-zero contents after OTA update");
+   "abort("system partition has unexpected non-zero contents after OTA update");"
   This problem can be solved by changing the old values of system.new.dat with current one
   and here is how to do it
                                           AND
   also if you script does not contains  "if range_sha1(........." then do not follow this guide , 
   instead do the repack with original file_contexts and the replace the newley created
   system.transfer.list and system.new.dat with your old one, it means copy them to your ROM
-  compress it to zip , then flash it to your device.
-  If you founf TWRP ERRORS , then take a screen shot and upload it here on my thread, IF IT IS RELATED TO 
-  SHA_1 , i will provide support otherwise i don't
+  and then compress it, then flash it to your device!
+  If you found TWRP ERRORS search xda for information or then take a screen shot and upload it on my thread,
+  IF IT IS RELATED TO SHA_1 , I will try to provide support otherwise I don't
 
 # Download these for further need
 
@@ -28,18 +28,18 @@
 
   * ROM (with file_contexts, or it will be usless)
 
-  * Strongly speaking every ROM contains file_contexts some in zip others in boot.img
-    only you have to extract them (on boot.img/RAMDISK/file_contexts is found)
+  * Strongly speaking every ROM contains file_contexts some in zip others in boot.img only you have to
+    extract them (on boot.img/RAMDISK/file_contexts is found, NO SUPPORT FOR NOUGHT, API 25,24)
 
-  * ZIP sign already included in extractor
+  * ZIP sign - already included in extractor
   
-# Inst.
+# Instructions
 
-Here is a sample of "updateR-script" of my cyanogenmod ROM 
+Sample of "updateR-script" of cyanogenmod ROM 
 
-START 0F SCRIPT
+ -> START 0F SCRIPT
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 assert(getprop("ro.product.device") == "C1904" || getprop("ro.build.product") == "C1904" || getprop("ro.product.device") == "C1905" || getprop("ro.build.product") == "C1905" || getprop("ro.product.device") == "C2004" || getprop("ro.build.product") == "C2004" || getprop("ro.product.device") == "C2005" || getprop("ro.build.product") == "C2005" || getprop("ro.product.device") == "nicki" || getprop("ro.build.product") == "nicki" || abort("This package is for device: C1904,C1905,C2004,C2005,nicki; this device is " + getprop("ro.product.device") + "."););
 
@@ -111,16 +111,16 @@ package_extract_file("boot.img", "/dev/block/platform/msm_sdcc.1/by-name/boot");
 
 show_progress(0.200000, 10);
 
-   END OF SCRIPT
+ -> END OF SCRIPT
 ----------------------------------------------------------------------------------------------------------------------------------------
 
- * As you can see there is range_sha1 see below eg.
+ * As you can see there is "if range_sha1" see below eg.
  
 if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "36,0,32770,32849,32851,33331,65535,65536,65538,98304,98306,98385,98387,98867,131071,131072,131074,163840,163842,163921,163923,164403,185342,196608,196610,229376,229378,229457,229459,262144,262146,294912,294914,294993,294995,295475,307199") == "0b20303394271424267e36a0ce7573f1b62ddc0d" then
 
 if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "48,32770,32849,32851,33331,65535,65536,65538,66050,97792,98304,98306,98385,98387,98867,131071,131072,131074,131586,163328,163840,163842,163921,163923,164403,185342,185854,196096,196608,196610,197122,228864,229376,229378,229457,229459,229971,261632,262144,262146,262658,294400,294912,294914,294993,294995,295475,307199,307200") == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then
 
- * THIS RANGE IS FROM 
+ * AFTER .../by-name/system", This line(from "36,.....to 307199") will also found in system.trasfer.list  
   
   "36,0,32770,32849,32851..........294995,295475,307199") == "0b20303394271424267e36a0ce7573f1b62ddc0d" then
   
@@ -129,7 +129,7 @@ if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "48,32770,32849,3
        
  
 
- * also line "0b20303394271424267e36a0ce7573f1b62ddc0d" is equal to sha1 sum of system.new.dat
+ * also line "0b20303394271424267e36a0ce7573f1b62ddc0d" is equal to sha1 sum of system.new.dat of 
  
  *           "16902dcea1b74f8c9451cb2245c51465d949ec7e" is equal to sum of system.new.dat
  
