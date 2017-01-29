@@ -506,7 +506,7 @@ cls
 
   cd sign_files
 
-java -jar signapk.jar testkey.x509.pem testkey.pk8 %filename% signed_%filename%
+java -jar signapk.jar testkey.x509.pem testkey.pk8 %filename% signed_%filename%.zip 
   del signapk.jar
   del testkey.x509.pem
   del testkey.pk8
