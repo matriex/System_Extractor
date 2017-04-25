@@ -369,3 +369,4 @@ Then flash it, Also wait for 5 minutes to boot
 I hope though you got it , comment if you need help, or confused in this 
 
 # NOTE  
+Please Ignore the grammer or Typos as English is not my native Language and I'm currently learning English from scratch
