@@ -1,5 +1,5 @@
 @echo off
-title Extract and Repack system.new.dat [4.x]
+title Extract and Repack system.new.dat [4.8]
 setlocal EnableDelayedExpansion
 
 ::   System extractor
@@ -24,12 +24,6 @@ setlocal EnableDelayedExpansion
 
 cd /d "%~dp0"
 goto admin_
-
-:errorNoPython
-echo.
-echo Error^: Python not installed
-pause
-
 
 :home
 cls
@@ -86,7 +80,7 @@ cls
     echo   /                                                  /
     bin\cecho   /  Copy {0a}"system.new.dat"{#} , {0a}"system.transfer.list"{#}  /
     echo.
-    echo   /  to current folder                               / 
+    echo   /  to current folder or %cd%                              / 
     echo   /                                                  /
     echo   ////////////////////////////////////////////////////
     echo.
