@@ -1,10 +1,9 @@
 # Repack instructions for "system.new.dat" -> matrixex 
 ----------------------------------------------------
-> USE NOTEPAD ++ TO READ THIS
+> USE 'NOTEPAD ++' TO READ THIS
 
-# First of all repack "may or may not" works with all ROM's especially CYANOGENMOD
+** Repack "may or may not" work with all ROM **
 
- (follow steps carefully,may be useful for other ROM)
 
 # INFORMATION 
   If you are using cyanogenmod ROM , you may found something in updateR-script which is 
@@ -28,7 +27,7 @@
 
   * ROM (with file_contexts, or it will be usless)
 
-  * Strongly speaking every ROM contains file_contexts some in zip others in boot.img only you have to
+  * Strongly speaking every ROM contains file_contexts some in zip others in boot.img only you have to do is to
     extract them (on boot.img/RAMDISK/file_contexts is found, NO SUPPORT FOR NOUGHT, API 25,24)
 
   * ZIP sign - already included in extractor
