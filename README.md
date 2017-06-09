@@ -17,7 +17,7 @@ This extractor is for extracting system.new.dat in easy method without using com
 
 ## Note
 
- * Repack for android nought N does not works
+ * Repack for android nougat N does not works
  
  * Repack of CM13 works fine 
   
