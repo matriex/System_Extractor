@@ -55,12 +55,18 @@ _OR_
  
 ## Contributers
  
-- darxmorph
+- darxmorph (Some fixes)
  
-- matrixex
+- matrixex (Script)
+
+- And_PDA (Imagextractor binary)
+
+- xpirit  (sdat2img.py script)
  
  Latest Changelog : https://github.com/matriex/System_Extractor-WIN/commit/b6f099ddc381a8a52da0ba870dc12eb0e02e14cf
+                 
                   : https://github.com/matriex/System_Extractor-WIN/commit/d6626c20c2e7573cff5923e2ca843f041385892d
-                  : https://github.com/matriex/System_Extractor-WIN/commit/6c4ded9184957e11cb84ca52a3d51079dff3869f
+       
+                 : https://github.com/matriex/System_Extractor-WIN/commit/6c4ded9184957e11cb84ca52a3d51079dff3869f
 
 ## NOTE : EXT_XX Branches are old versions
