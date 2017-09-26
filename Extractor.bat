@@ -4,19 +4,6 @@ setlocal EnableDelayedExpansion
 
 ::   System extractor
 ::   Copyright (C) 2015-2017  matrixex 
-::
-::    This program is free software: you can redistribute it and/or modify
-::    it under the terms of the GNU General Public License as published by
-::    the Free Software Foundation, either version 3 of the License, or
-::    (at your option) any later version.
-::
-::    This program is distributed in the hope that it will be useful,
-::    but WITHOUT ANY WARRANTY; without even the implied warranty of
-::    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-::    GNU General Public License for more details.
-::
-::    You should have received a copy of the GNU General Public License
-::    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 ::mode con:cols=82 lines=27
@@ -264,17 +251,19 @@ SET /P "SIZE=TYPE THE SIZE IN MB : "
    echo.
    echo   For flashing xyz_ROM.zip with dat files , you need to modify updater-script
    echo.
-   echo   Script, "of some roms" , b'coz some roms contains a link b/w updateR-script 
+   echo   Script, "of some roms" , because some roms contains a link b/w updateR-script 
    echo.
-   echo   and system.transfer.list. The link includes following : There is a line in
+   echo   and system.transfer.list. 
+   echo.
+   echo.  The link includes following : There is a line in
    echo.
    echo   updateR-script script called 'if range_sha1()' if you found this in 
    echo.
-   echo   updateR-script then from here follow the guide Repack_INFO.txt otherwise 
+   echo   updateR-script then from here follow the guide Repack_INFO.txt OTHERWISE 
    echo.
-   echo   directly copy system.new.dat and system.transfer.list to ROM folder and 
+   echo   copy UNMODIFIED system.transfer.list and system.new.dat to your desired folder
    echo.
-   echo   repack/zip it and flash it.'
+   echo   Then do the flashing work.
    echo.
    echo.
    pause   
@@ -292,11 +281,8 @@ cls
    echo  /                                                                        /
    echo  /  Copy all your sub folders/files (like /app,/bin,/lib build.prop etc.) / 
    echo  /                                                                        /
-   bin\cecho  /  to {0a}"system"{#} folder and delete all previously extracted files from     / 
-   echo.
-   echo  /                                                                        /
-   echo  /  current folder and press enter                                        /
-   echo  /                                                                        /
+   bin\cecho  /  to {0a}"system"{#} folder and press enter                            / 
+   echo.                                                                          /
    echo  //////////////////////////////////////////////////////////////////////////
    echo.
    echo.
@@ -327,7 +313,7 @@ cls
   bin\cecho   {0c}"file_contexts" not found please copy it too current{#}
   echo.
   echo.
-  bin\cecho   {0c}directory{#}, Thanks for your cooperation
+  bin\cecho   {0c}directory{#}, Thanks for your cooperation ;)
   echo.
   echo.
   echo.
@@ -398,11 +384,9 @@ echo //////////////////////////////////////////////////////////////////
 echo.
 echo   You have to copy your folders that is /app ,/bin ,/lib 
 echo.
-echo   build.prop to system folder ,hope you got it
+echo   build.prop to SYSTEM folder ,hope you got it
 echo.
-echo   confusing ohh c-mon just copy sub folders of your rom 
-echo.
-echo   to system folder also copy file_contexts to current directory   
+echo.  and also copy file_contexts to current directory   
 echo. 
 echo \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 echo.
@@ -428,7 +412,7 @@ echo.
 if exist system.img echo     Found system.img
 if not exist system.img (cls &echo. &echo system.img not found , please try again with mentioned name &pause > NUL &goto :home)
 echo.
-echo  wait aprox 2-3 minutes
+echo  wait aprox 1-2 minutes
 ::FOR 
 echo.
 bin\Imgextractor.exe system.img
@@ -553,6 +537,7 @@ goto home
 ::  -------------------   END OF SIGN SCRIPT   -------------------- ::
 
 ::
+::ADMIN rights used here is to make script flawless not to gain your INFORMATION or delete your documents
 :admin_
 >>nul 2>>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 REM -->> If error flag set, we do not have admin.
@@ -604,6 +589,10 @@ set "activity=OLD A/C:"
 echo %date% >> %temp%\date_log.txt
 goto home
 
+
+::NOTE: - there are too many functions of different steps and I think this is unnecessary
+:: I did this because of some users but day by day users are getting samrter ;) 
+:: So maybe in future I'll remove it or might come up with some Idea to sorten it. 
 ::
 ::System FOLDER stop
 ::
@@ -783,6 +772,7 @@ echo.
 echo.
 echo.
 echo.
+:: This below line is to delete log that is found in bin of extractor
 bin\cecho              {80}THANKS{#} {20}FOR{#} {40}USING{#}
 IF EXIST system__statfile.txt del system__statfile.txt
 IF EXIST bin\log_size.txt DEL bin\log_size.txt
