@@ -155,11 +155,11 @@ erase 2,0,129024
 new 76,0,32,33,164,539,692,696,13549,13550,14263,14264,14313,14314,14374,14375,14507,14520,14522,14527,14657,14670,14672,14677,14805,14818,14820,14825,16941,16942,32767,32768,32770,32801,32802,33307,36711,36714,42767,42774,42988,42989,50105,50107,50114,50120,50141,50142,50143,50162,52431,52432,55597,55600,65535,65536,65537,66042,89668,89674,93810,93811,97042,97043,97070,97122,98100,98304,98306,98337,98338,98843,98844,100859,128209,128212,129023
 ```
 
- -> This is totally different from old system.transfer.list (FOUND ON START OF THIS GUIDE)
+* This is totally different from old system.transfer.list (FOUND ON START OF THIS GUIDE)
  
- -> On comparing there is not "zero" command
+* On comparing there is not "zero" command
 
- -> Now copy line new --> "76,0,32,33,............,128212,129023" from system.transfer.list to updater-script (see below)
+* Now copy line new --> **"76,0,32,33,............,128212,129023"** from system.transfer.list to updater-script (see below)
  
  * PART OF updater-script where  range_sha1 exists
  ```
@@ -172,7 +172,7 @@ if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "76,0,32,33,164,5
 
 * As you can see above what I have done. I've replaced transfer commands in 
  
- if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "**REPLACED COMMANDS**") == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then
+``` if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", ```"**REPLACED COMMANDS**"```) == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then```
  
  -> Now just look at this
 
