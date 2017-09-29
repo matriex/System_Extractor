@@ -106,7 +106,8 @@ erase 12,66050,97792,131586,163328,186056,196096,197122,228864,229971,261632,262
    
  5)Then copy "file_contexts" from ROM to current directory(Current directory=Where you have palced extractor.bat)
    
-## A "CUSTOM" ROM ZIP CONTAINS(In Stock ROM, may be another files are present)
+##INFO.
+* A "CUSTOM" ROM ZIP CONTAINS
 ```
 
 *   system                (FOLDER)
@@ -126,6 +127,8 @@ erase 12,66050,97792,131586,163328,186056,196096,197122,228864,229971,261632,262
 *   boot.img              (FILE)
    
 ```
+_(In Stock ROM, may be another files are present)_
+
    (FOR MARSHMALLOW AN LOLLIPOP) If you unable to find it(file_contexts) in zip file then extract ramdisk from boot.img
    look for "file_contexts" inside ramdisk folder(don't ask me how , search xda) or try to explore your ROM->device source
 
