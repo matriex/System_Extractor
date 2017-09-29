@@ -27,7 +27,8 @@
   
 ## Instructions
 
-Sample of "updateR-script" of cyanogenmod ROM 
+Sample of "updateR-script" of cyanogenmod ROM (**INITIAL**)
+(Note: Removed some lines of script)
 
 ```
 if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "36,0,32770,32849,32851,33331,65535,65536,65538,98304,98306,98385,98387,98867,131071,131072,131074,163840,163842,163921,163923,164403,185342,196608,196610,229376,229378,229457,229459,262144,262146,294912,294914,294993,294995,295475,307199") == "0b20303394271424267e36a0ce7573f1b62ddc0d" then
@@ -213,16 +214,9 @@ bdd6a7e1352232b97db4286cc21fdc8ea91d40f7 system.new.dat
 _Both of line must be assigned same SHA-1 value_
 
 * After above, updater-script script will somewhat looks like this :-
- (Note: Removed some lines of script)
+ (**FINAL**)
  
 ```
-ui_print("Patching system image unconditionally...");
-
-block_image_update("/dev/block/platform/msm_sdcc.1/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat", "system.patch.dat");
-
-ui_print("Verifying the updated system image...");
-
-
 if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "76,0,32,33,164,539,692,696,13549,13550,14263,14264,14313,14314,14374,14375,14507,14520,14522,14527,14657,14670,14672,14677,14805,14818,14820,14825,16941,16942,32767,32768,32770,32801,32802,33307,36711,36714,42767,42774,42988,42989,50105,50107,50114,50120,50141,50142,50143,50162,52431,52432,55597,55600,65535,65536,65537,66042,89668,89674,93810,93811,97042,97043,97070,97122,98100,98304,98306,98337,98338,98843,98844,100859,128209,128212,129023") == "bdd6a7e1352232b97db4286cc21fdc8ea91d40f7" then
 
 if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "76,0,32,33,164,539,692,696,13549,13550,14263,14264,14313,14314,14374,14375,14507,14520,14522,14527,14657,14670,14672,14677,14805,14818,14820,14825,16941,16942,32767,32768,32770,32801,32802,33307,36711,36714,42767,42774,42988,42989,50105,50107,50114,50120,50141,50142,50143,50162,52431,52432,55597,55600,65535,65536,65537,66042,89668,89674,93810,93811,97042,97043,97070,97122,98100,98304,98306,98337,98338,98843,98844,100859,128209,128212,129023") == "bdd6a7e1352232b97db4286cc21fdc8ea91d40f7" then
@@ -240,20 +234,18 @@ else
 endif;
 ```
 
-* **You can clearley point out difference b/w old updater-script(see start of guide ) and upater-script (above)**
+* **You can clearley point out difference between _INITIAL_ updater-script(see start of guide) and _FINAL_ upater-script (above)**
 
-The both "range_sha1" line is same 
+* The both "range_sha1" line is same in **final** and their **SHA-1** values too
 
-That's all, Repack ROM to ZIP(Use Winrar)
+* That's all save updateR-script, repack ROM to ZIP(Use Winrar)and sign xyz_ROM.zip(optional) for official Recovery , for TWRP do not sign the file, disable zip signing from settingsof TWRP
 
-And sign ROM.zip for official Recovery , for TWRP do not sign the file, disable zip signing from settings
+* Then flash it, also try to wait for 5 minutes to boot(be patience)
 
-Then flash it, Also wait for 5 minutes to boot
+**I hope though you got it , comment if you need help, or confused in this**
 
-I hope though you got it , comment if you need help, or confused in this 
+## NOTE  
+_Please Ignore the grammer or Typos as English is not my native Language!_
 
-# NOTE  
-Please Ignore the grammer or Typos as English is not my native Language and I'm currently learning English from scratch
-
-And yes if you think this method is usless then please don't use it , don't comment , I have tried my best to write this script for 
-noobs to understand how to edit updater-script.  -PEACE 
+**_And yes if you think this method is usless then please don't use it , don't comment , I have tried my best to write this script for 
+noobs to understand how to edit updater-script._**  -PEACE, matrixex 
