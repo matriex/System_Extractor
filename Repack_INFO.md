@@ -98,13 +98,13 @@ erase 12,66050,97792,131586,163328,186056,196096,197122,228864,229971,261632,262
  
 * First open Extractor.bat
 
-* Choose option 2 "repack system.new.dat"
+* Choose option 2 "**Repack system.new.dat**"
  
-* Choose 1(manual mode) --> Repack ( file_contexts is required)
+* Choose **1(manual mode)** --> **Repack ( file_contexts is required)**
  
 * Copy your sub folders for example:- addon.d, app, bin, fonts, framework, buile.prop, etc., to system folder (this message will also displayed in extractor).
    
-* Then copy "file_contexts" from ROM to current directory(Current directory=Where you have palced extractor.bat)
+* Then place **"file_contexts"** besie system folder
    
 ## SOME INFO.
 * A "CUSTOM" ROM ZIP CONTAINS
