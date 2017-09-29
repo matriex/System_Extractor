@@ -66,11 +66,11 @@ if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "48,32770,32849,3
   ```
   "16902dcea1b74f8c9451cb2245c51465d949ec7e"
   ```
-  is also equal to **SAH-1 value** of same **system.new.dat**
+  is also equal to **SAH-1 value** of "same" **system.new.dat**
   
   (**SHA-1 value or Secure Hash Algorithm 1 value**)
   
- * And Double **SHA-1** value of a single file is not possible or I don't know. So either these two values might of different things(files/or maybe numbers).
+ * Frome above there are two different values of **SHA-1** of same files and Double **SHA-1** value of a **"single"** file is not possible or I don't know. So either these two values might of different things(files/or maybe numbers).
  
 
 * In system.transfer.list of CM13 ROM, It contains -
