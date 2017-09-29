@@ -191,7 +191,7 @@ _Please just replace your system.new.transfer list "new" values with updateR-scr
    
  **2nd-->  16902dcea1b74f8c9451cb2245c51465d949ec7e**
  
-* Now just open **"sha1_system.txt"** that was generated recently by Extractor, Inside that you will find something like this
+* Now just open **"sha1_system.txt"** that was generated recently by xxtractor, inside it you will find something like this
 ``` 
 
 //
@@ -215,7 +215,7 @@ _Both of line must be assigned same SHA-1 value_
 * After above, updater-script script will somewhat looks like this :-
  (Note: Removed some lines of script)
  
-```
+
 ui_print("Patching system image unconditionally...");
 
 block_image_update("/dev/block/platform/msm_sdcc.1/by-name/system", package_extract_file("system.transfer.list"), "system.new.dat", "system.patch.dat");
