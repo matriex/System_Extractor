@@ -94,17 +94,17 @@ erase 12,66050,97792,131586,163328,186056,196096,197122,228864,229971,261632,262
 * So system.transfer.list and updater-script has a link of "sha1" and "transfer" commands
 * Now change this into right, after repack you have three files ,system.new.dat , system.transfer.list and "sha1_system.txt" which contains sha1 check of system.new.dat
  
-## LET'S REPACK ROM
+## Let's repack ROM
  
- 1)first open Extractor.bat
+* First open Extractor.bat
 
- 2)choose option 2 "repack system.new.dat"
+* Choose option 2 "repack system.new.dat"
  
- 3)choose 1(manual mode) --> Repack ( file_contexts is required)
+* Choose 1(manual mode) --> Repack ( file_contexts is required)
  
- 4)Copy your sub folders for example:- addon.d, app, bin, fonts, framework, buile.prop, etc., to system folder (this message will also displayed in extractor).
+* Copy your sub folders for example:- addon.d, app, bin, fonts, framework, buile.prop, etc., to system folder (this message will also displayed in extractor).
    
- 5)Then copy "file_contexts" from ROM to current directory(Current directory=Where you have palced extractor.bat)
+* Then copy "file_contexts" from ROM to current directory(Current directory=Where you have palced extractor.bat)
    
 ## SOME INFO.
 * A "CUSTOM" ROM ZIP CONTAINS
