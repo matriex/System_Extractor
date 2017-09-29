@@ -1,8 +1,9 @@
 # Repack instructions for "system.new.dat" Cynogenmod   
 
-* READ THIS ONLY IN GIT 
-* Repack "may or may not" work with all ROM 
-* I don't think I will be able to provide any repack GUIDE for #NOUGHT
+* Read this only in github for better view.
+* Repack "may or may not" work with all ROM.
+* This guide is not for official or Stock ROM. 
+* I don't think I will be able to provide any repack GUIDE for #NOUGHT(or try below method if it works)
 
 
 # INFORMATION 
