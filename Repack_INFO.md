@@ -11,10 +11,11 @@ _and I don't think I will be able to provide any repack GUIDE for NOUGHT(or try 
    **"abort("system partition has unexpected non-zero contents after OTA update");"**
   This problem can be solved by changing the old values of system.new.dat with current one and here is how to do it._
 
-* **"if range_sha1(........."** == _a line found in updateR-script of android 6.x ROM's_
+**NOTE**
+* **"if range_sha1(........."**  _a line found in updateR-script of android 6.x ROM's_
 * **SHA-1** (Secure Hash Algorithm **1**)
-* **system partition** partition where your OTA flashes files
-* If your updateR-script do not contain above lines then don't follow this guide, simply just replace your old files with recently created ones (old-files=system.new.dat, system.transfer.list) 
+* **system partition** _partition where your OTA flashes files_
+* **If your updateR-script do not contain above lines then don't follow this guide, simply just replace your old files with recently created ones (old-files=system.new.dat, system.transfer.list)** 
 
 ## Download these for further need
 
