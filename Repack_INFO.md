@@ -1,9 +1,9 @@
 # Guide for repack   
  
-_Read this only in github for better view.
-_Repack "may or may not" work with all ROM.
-_This guide is not for official or Stock ROM. 
-_I don't think I will be able to provide any repack GUIDE for #NOUGHT(or try below method if it works)
+_Read this only in github for better view_
+_Repack "may or may not" work with all ROM_
+_This guide is not for official or Stock ROM_ 
+_I don't think I will be able to provide any repack GUIDE for #NOUGHT(or try below method if it works)_
 
 ## INFORMATION 
 
