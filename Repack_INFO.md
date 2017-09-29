@@ -203,7 +203,7 @@ _Please just replace your system.new.transfer list "new" values with updateR-scr
    
  **2nd-->  16902dcea1b74f8c9451cb2245c51465d949ec7e**
  
-* Now just open **"sha1_system.txt"** that was generated recently by xxtractor, inside it you will find something like this
+* Now just open **"sha1_system.txt"** that was generated recently by extractor, inside it you will find something like this
 ``` 
 
 //
@@ -214,7 +214,7 @@ bdd6a7e1352232b97db4286cc21fdc8ea91d40f7 system.new.dat
 ```
 * Replace this value **bdd6a7e1352232b97db4286cc21fdc8ea91d40f7** with old **"SHA-1"** values, 
 
-* example:  
+* example/like this :
 ```
 ........,129023") == "bdd6a7e1352232b97db4286cc21fdc8ea91d40f7" then
 
@@ -224,7 +224,7 @@ bdd6a7e1352232b97db4286cc21fdc8ea91d40f7 system.new.dat
 
 _Both of line must be assigned same SHA-1 value_
 
-* After above, updater-script script will somewhat looks like this :-
+* **After above, updater-script script will somewhat looks like this** :-
  (**FINAL**)
  
 ```
