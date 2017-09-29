@@ -98,17 +98,19 @@ erase 12,66050,97792,131586,163328,186056,196096,197122,228864,229971,261632,262
 
 * So system.transfer.list and updater-script has a link of "**SAH-1**" and "**transfer**" commands
 * Now change this into right, after repack you have three files 
-```system.new.dat
+```
+   system.new.dat
    system.transfer.list
    "sha1_system.txt" which contains sha1 check of system.new.dat
+   
 ```
-* **NOTE**:- **transfer** commands means numbers beside "new" & "zero" of system.transfer.list, refer to xpirit guide
+* **NOTE**:- **transfer** commands means numbers beside "new" & "zero" in system.transfer.list, refer to xpirit guide
  
 ## Let's repack ROM
  
 * First open Extractor.bat
 
-* Choose option 2 "**Repack system.new.dat**"
+* Choose option "**2 Repack system.new.dat**"
  
 * Choose **1 (manual mode)** --> **Repack ( file_contexts is required)**
  
@@ -167,7 +169,7 @@ new 76,0,32,33,164,539,692,696,13549,13550,14263,14264,14313,14314,14374,14375,1
 
 * This is totally different from old system.transfer.list (FOUND ON START OF THIS GUIDE)
  
-* On comparing there is not "zero" command
+* On comparing there is no "zero" command
 
 * Now copy line new --> **"76,0,32,33,............,128212,129023"** from system.transfer.list to updater-script (see below)
  
@@ -183,7 +185,7 @@ if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "76,0,32,33,164,5
 
 * **As you can see above what I have done. I've replaced transfer commands in** 
  
-``` if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", ```"**REPLACED COMMANDS**"```) == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then```
+``` if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", ```"**REPLACED COMMANDS or copy pasted avove shown line**"```) == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then```
 
 _Please just replace your system.new.transfer list "new" values with updateR-script "if range_sha1" values_
  
