@@ -7,14 +7,11 @@
 
 ## INFORMATION 
 
-  If you are using cyanogenmod ROM , you may found something in updateR-script which is 
-  not found in others, That is  
+  If you are using cyanogenmod ROM , you may found something in updateR-script which is not found in others, That is  
   ``` "if range_sha1(........." ```
-  this executs in script after extraction of system.new.dat , which verifies sah 1 values of system.new.dat,
-  if values are same, the scripts succeeds and the flashing completes , if not then the script returns 
+  this executs in script after extraction of system.new.dat , which verifies sah 1 values of system.new.dat, if values are same, the scripts succeeds and the flashing completes , if not then the script returns 
    ```"abort("system partition has unexpected non-zero contents after OTA update");"```
-  This problem can be solved by changing the old values of system.new.dat with current one
-  and here is how to do it.
+  This problem can be solved by changing the old values of system.new.dat with current one and here is how to do it.
 
 * If your updateR-script do not contain above lines then don't follow this guide, simply just replace your old files with recently created ones (old-files=system.new.dat, system.transfer.list) 
 
@@ -52,7 +49,7 @@ if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "36,0,32770,32849
 if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "48,32770,32849,32851,33331,65535,65536,65538,66050,97792,98304,98306,98385,98387,98867,131071,131072,131074,131586,163328,163840,163842,163921,163923,164403,185342,185854,196096,196608,196610,197122,228864,229376,229378,229457,229459,229971,261632,262144,262146,262658,294400,294912,294914,294993,294995,295475,307199,307200") == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then
 ```
 
-* After **.../by-name/system"**, This line(from **"36,.....to 307199"**) will also found in system.trasfer.list of the same ROM
+* After **.../by-name/system"**, This line(from **"36,.....to 307199"**) was also found in system.trasfer.list of the same ROM
 ```  
   "36,0,32770,32849,32851..........294995,295475,307199") == "0b20303394271424267e36a0ce7573f1b62ddc0d" then
   
