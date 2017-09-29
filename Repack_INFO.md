@@ -62,17 +62,16 @@ if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "48,32770,32849,3
   ```
   "0b20303394271424267e36a0ce7573f1b62ddc0d" 
   ``` 
-  is equal to sha1 sum of system.new.dat of 
+  is equal to sha1 **"sum"** (**SHA-1 value or Secure Hash Algorithm 1 value**) of system.new.dat and 
+  ```
+  "16902dcea1b74f8c9451cb2245c51465d949ec7e"
+  ```
+  is also equal to another sha1 **"sum"** of system.new.dat
  
-  and ```"16902dcea1b74f8c9451cb2245c51465d949ec7e"```
-  is equal to sha1 sum of system.new.dat
- 
- * Double sha1_check of a single file and both are different(not possible or I don't know, I AM NOT A DEV)
- 
- * But these are not actual "sha_1" sum of system.new.dat (according to me) these are transfer command lines found in system.transfer.list of CM and other ROM's
+ * And Double **SHA-1** value of a single file is not possible or I don't know. So either these two values might of different things(files/or maybe numbers).
  
 
-## CM 13 ROM , system.transfer.list, It contains (View this only on GIT, else you will find some lines overlapping)
+* In system.transfer.list of CM13 ROM, It contains -
 ```
 3
 130069
@@ -83,27 +82,22 @@ zero 48,32770,32849,32851,33331,65535,65536,65538,66050,97792,98304,98306,98385,
 erase 12,66050,97792,131586,163328,186056,196096,197122,228864,229971,261632,262658,294400
 ```
 
- -> You can see here command 
-      
+* You can see here command 
+```      
 	new 36,0,32770,32849,32851.........to the end  
 	  
 	zero 48,32770,32849,32851,.........to the end  
-	  
-	matches range_sha1 of updater-script --------->  "36,0,32770,32849,32851,........294995,295475,307199") == "0b20303394271424267e36a0ce7573f1b62ddc0d" then
+```	  
+	matches range_sha1 of updater-script --------->  ```"36,0,32770,32849,32851,........294995,295475,307199") == "0b20303394271424267e36a0ce7573f1b62ddc0d" then
 	
-    matches range_sha1 of updater-script --------->  "48,32770,32849,32851,..........,295475,307199,307200") == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then
+    matches range_sha1 of updater-script --------->  "48,32770,32849,32851,..........,295475,307199,307200") == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then```
 
     (Hope you get it)
 
-  -> So system.transfer.list and updater-script has a link of "sha1" and "transfer" commands
-   
-  -> Now change this into right
+* So system.transfer.list and updater-script has a link of "sha1" and "transfer" commands
+* Now change this into right, after repack you have three files ,system.new.dat , system.transfer.list and "sha1_system.txt" which contains sha1 check of system.new.dat
  
-  after repack you have two files ,system.new.dat , system.transfer.list
- 
-  and one more "sha1_system.txt" which contains sha1 check of system.new.dat
- 
- LET'S REPACK ROM
+## LET'S REPACK ROM
  
  1)first open Extractor.bat
 
@@ -111,31 +105,30 @@ erase 12,66050,97792,131586,163328,186056,196096,197122,228864,229971,261632,262
  
  3)choose 1(manual mode) --> Repack ( file_contexts is required)
  
- 4)Copy your sub folders for example:- addon.d, app, bin, fonts, framework, buile.prop, etc. 
-   to system folder (this message will also displayed in extractor)
+ 4)Copy your sub folders for example:- addon.d, app, bin, fonts, framework, buile.prop, etc., to system folder (this message will also displayed in extractor).
    
  5)Then copy "file_contexts" from ROM to current directory(Current directory=Where you have palced extractor.bat)
    
-# A "CUSTOM" ROM ZIP CONTAINS(In stock, may be another files are present)
------------------------------- 
+## A "CUSTOM" ROM ZIP CONTAINS(In Stock ROM, may be another files are present)
+```
 
-   system                (FOLDER)
+*   system                (FOLDER)
    
-   META-INF              (FOLDER)
+*   META-INF              (FOLDER)
    
-   install               (FOLDER)
+*  install               (FOLDER)
    
-   system.transfer.list  (FILE)
+*   system.transfer.list  (FILE)
    
-   system.patch.dat      (FILE)
+*   system.patch.dat      (FILE)
    
-   system.new.dat        (FILE)
+*   system.new.dat        (FILE)
    
-   file_contexts         (FILE)
+*   file_contexts         (FILE)
    
-   boot.img              (FILE)
+*   boot.img              (FILE)
    
---------------------------------
+```
    (FOR MARSHMALLOW AN LOLLIPOP) If you unable to find it(file_contexts) in zip file then extract ramdisk from boot.img
    look for "file_contexts" inside ramdisk folder(don't ask me how , search xda) or try to explore your ROM->device source
 
