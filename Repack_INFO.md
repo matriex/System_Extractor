@@ -249,12 +249,12 @@ endif;
 
 * The both "range_sha1" line in **INITIAL updateR-script** and **FINAL updateR-script** differs
 
-* Also in final script both the "**SHA-1**" value become equals to each other and ther transfer commands values too
+* Also in final script both the "**SHA-1**" value become equals to each other and their transfer commands values too
  (refer to xpirit guide for transfer commands)
 
-* That's all save updateR-script, repack ROM to ZIP(Use Winrar)and sign xyz_ROM.zip(optional) for official Recovery , for TWRP do not sign the file, disable zip signing from settingsof TWRP
+* That's all save updateR-script, repack ROM to ZIP (Use Winrar) and sign xyz_ROM.zip (optional) for official Recovery , for TWRP do not sign the file, disable zip signing from settings of TWRP
 
-* Then flash it, also try to wait for 5 minutes to boot(be patience)
+* Then flash it, and try to wait for 5 minutes to boot (be patience), if works then good to go else :(
 
 **I hope though you got it , comment if you need help, or confused in this**
 
