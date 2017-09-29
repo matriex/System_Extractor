@@ -97,8 +97,12 @@ erase 12,66050,97792,131586,163328,186056,196096,197122,228864,229971,261632,262
     (Hope you get it)
 
 * So system.transfer.list and updater-script has a link of "**SAH-1**" and "**transfer**" commands
-* Now change this into right, after repack you have three files ,system.new.dat , system.transfer.list and "sha1_system.txt" which contains sha1 check of system.new.dat
-* transfer commands means numbers beside "new" & "zero" of system.transfer.list, refer to xpirit guide
+* Now change this into right, after repack you have three files 
+```system.new.dat
+   system.transfer.list
+   "sha1_system.txt" which contains sha1 check of system.new.dat
+```
+* **NOTE**:- **transfer** commands means numbers beside "new" & "zero" of system.transfer.list, refer to xpirit guide
  
 ## Let's repack ROM
  
