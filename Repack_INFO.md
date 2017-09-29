@@ -19,18 +19,17 @@
 
 * If your updateR-script do not contain above lines then don't follow this guide, simply just replace your old files with recently created ones (old-files=system.new.dat, system.transfer.list) 
 
-# Download these for further need
+## Download these for further need
 
   * Extractor.bat
 
-  * ROM (with file_contexts, or it will be usless)
+  * ROM (with file_contexts, or it will be useless)
 
-  * Strongly speaking every ROM contains file_contexts some in zip others in boot.img only you have to do is to
-    extract them (on boot.img/RAMDISK/file_contexts is found, NO SUPPORT FOR NOUGHT, API 25,24)
+  * For nought try to convert file_contexts.bin(binary file) to file_contexts(readable file), for conversion tool search xda or PM me!
 
   * ZIP sign - already included in extractor
   
-# Instructions
+## Instructions
 
 Sample of "updateR-script" of cyanogenmod ROM 
 
@@ -48,29 +47,30 @@ endif;
 ```
 
 ## As you can see there is "if range_sha1" on the script, see below eg.
+```
  
 if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "36,0,32770,32849,32851,33331,65535,65536,65538,98304,98306,98385,98387,98867,131071,131072,131074,163840,163842,163921,163923,164403,185342,196608,196610,229376,229378,229457,229459,262144,262146,294912,294914,294993,294995,295475,307199") == "0b20303394271424267e36a0ce7573f1b62ddc0d" then
 
 if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "48,32770,32849,32851,33331,65535,65536,65538,66050,97792,98304,98306,98385,98387,98867,131071,131072,131074,131586,163328,163840,163842,163921,163923,164403,185342,185854,196096,196608,196610,197122,228864,229376,229378,229457,229459,229971,261632,262144,262146,262658,294400,294912,294914,294993,294995,295475,307199,307200") == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then
+```
 
- ## AFTER .../by-name/system", This line(from "36,.....to 307199") will also found in system.trasfer.list  
-  
+* AFTER .../by-name/system", This line(from "36,.....to 307199") will also found in system.trasfer.list  
+```  
   "36,0,32770,32849,32851..........294995,295475,307199") == "0b20303394271424267e36a0ce7573f1b62ddc0d" then
   
   "48,32770,32849,32851,..........,295475,307199,307200") == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then
-     
-       
+```     
+* Also line
+  ```
+  "0b20303394271424267e36a0ce7573f1b62ddc0d"``` is equal to sha1 sum of system.new.dat of 
  
-
-  also line "0b20303394271424267e36a0ce7573f1b62ddc0d" is equal to sha1 sum of system.new.dat of 
- 
-  and "16902dcea1b74f8c9451cb2245c51465d949ec7e" is equal to sum of system.new.dat
+  and ```"16902dcea1b74f8c9451cb2245c51465d949ec7e"``` is equal to sum of system.new.dat
  
   Double sha1_check of a single file and both are different(not possible or I don't know, I AM NOT A DEV)
  
-  BUT THESE ARE NOT ACTUAL SHA_1 SUM OF SYSTEM.NEW.DAT (according to me)
+  But these are not actual "sha_1" sum of system.new.dat (according to me)
   
-  THESE ARE TRANSFER COMMAND LINES FOUND found in system.transfer.list of CM AND OTHER ROM's
+  these are transfer command lines found in system.transfer.list of CM and other ROM's
  
 
 ## CM 13 ROM , system.transfer.list, It contains (View this only on GIT, else you will find some lines overlapping)
