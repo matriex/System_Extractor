@@ -6,7 +6,7 @@
 * I don't think I will be able to provide any repack GUIDE for #NOUGHT(or try below method if it works)
 
 
-# INFORMATION 
+### INFORMATION 
   If you are using cyanogenmod ROM , you may found something in updateR-script which is 
   not found in others, That is  ``` "if range_sha1(........." ```,this executs in script after extraction 
   of system.new.dat , which verifies sah 1 values of system.new.dat , if values are same, the scripts
