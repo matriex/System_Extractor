@@ -17,7 +17,7 @@
   This problem can be solved by changing the old values of system.new.dat with current one
   and here is how to do it.
 
-* If your updateR-script do not contain above lines then don't follow this guide, simply just replace your old files with newly created ones (old-files=system.new.dat, system.transfer.list) 
+* If your updateR-script do not contain above lines then don't follow this guide, simply just replace your old files with recently created ones (old-files=system.new.dat, system.transfer.list) 
 
 # Download these for further need
 
