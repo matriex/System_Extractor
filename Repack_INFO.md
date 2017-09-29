@@ -7,9 +7,7 @@ _and I don't think I will be able to provide any repack GUIDE for NOUGHT(or try 
 
 ## INFORMATION 
 
-  _If you are using cyanogenmod ROM , you may found something in updateR-script, That is  
-  **"if range_sha1(........."**
-  this executs in script after extraction of system.new.dat to **"system partition"** , which verifies **SAH-1** values of system.new.dat, if values are same, the scripts succeeds and the flashing completes , if not then the script returns 
+  _If you are using cyanogenmod ROM , you may found something in updateR-script, That is **"if range_sha1(........."** this executs in script after extraction of system.new.dat to **"system partition"** , which verifies **SAH-1** values of system.new.dat, if values are same, the scripts succeeds and the flashing completes , if not then the script returns 
    **"abort("system partition has unexpected non-zero contents after OTA update");"**
   This problem can be solved by changing the old values of system.new.dat with current one and here is how to do it._
 
