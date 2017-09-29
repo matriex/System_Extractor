@@ -129,10 +129,10 @@ erase 12,66050,97792,131586,163328,186056,196096,197122,228864,229971,261632,262
 ```
 _(In Stock ROM, may be another files are present)_
 
-   **(FOR MARSHMALLOW AN LOLLIPOP)** If you unable to find it(file_contexts) in zip file then extract ramdisk from boot.img
-   and look for "file_contexts" inside ramdisk folder(don't ask me how , search xda) _or_ try to explore your ROM->device source
+   **(FOR MARSHMALLOW AN LOLLIPOP)**  If you unable to find it (file_contexts) in zip file then extract ramdisk from boot.img
+   and look for "file_contexts" inside ramdisk folder (search xda  for methods) _or_ try to explore your **ROM/device_source**
 
-   _IMP : Don not use other "file_contexts" or dummy "file_contexts" , it can cause device to loop_ 
+   _IMP : Do not use other "file_contexts" or dummy "file_contexts" , it can cause device to loop_ 
  
 * Hit enter if you have done above 
  
@@ -142,13 +142,11 @@ _(In Stock ROM, may be another files are present)_
    system.transfer.list
    sha1_system.txt      -->  A new fresh **SHA-1** value of system.new.dat
  ```
- 9)Now copy system.new.dat system.transfer.list to ROM folder
+ * Now copy system.new.dat & system.transfer.list to ROM folder
  
- 10)Here in my case I get all files as mentioned 
+ * Open system.transfer.list :-
  
- 11)Open system.transfer.list
- 
-# In my case it (system.transfer.list) looks like this
+### In my case it (system.transfer.list) looks like this
 ```
 
 1
@@ -157,13 +155,13 @@ erase 2,0,129024
 new 76,0,32,33,164,539,692,696,13549,13550,14263,14264,14313,14314,14374,14375,14507,14520,14522,14527,14657,14670,14672,14677,14805,14818,14820,14825,16941,16942,32767,32768,32770,32801,32802,33307,36711,36714,42767,42774,42988,42989,50105,50107,50114,50120,50141,50142,50143,50162,52431,52432,55597,55600,65535,65536,65537,66042,89668,89674,93810,93811,97042,97043,97070,97122,98100,98304,98306,98337,98338,98843,98844,100859,128209,128212,129023
 ```
 
- -> This is totally different from old system.transfer.list(FOUND ON START OF THIS GUIDE)
+ -> This is totally different from old system.transfer.list (FOUND ON START OF THIS GUIDE)
  
  -> On comparing there is not "zero" command
 
  -> Now copy line new --> "76,0,32,33,............,128212,129023" from system.transfer.list to updater-script (see below)
  
- -> PART OF updater-script where  range_sha1 exists
+ * PART OF updater-script where  range_sha1 exists
  ```
 
 if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "76,0,32,33,164,539,692,696,13549,13550,14263,14264,14313,14314,14374,14375,14507,14520,14522,14527,14657,14670,14672,14677,14805,14818,14820,14825,16941,16942,32767,32768,32770,32801,32802,33307,36711,36714,42767,42774,42988,42989,50105,50107,50114,50120,50141,50142,50143,50162,52431,52432,55597,55600,65535,65536,65537,66042,89668,89674,93810,93811,97042,97043,97070,97122,98100,98304,98306,98337,98338,98843,98844,100859,128209,128212,129023") == "0b20303394271424267e36a0ce7573f1b62ddc0d" then
@@ -172,8 +170,9 @@ if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "76,0,32,33,164,5
 
 ```
 
- -> As you can see above what I have done ,I've replaced transfer commands in 
- if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "REPLACED COMMANDS") == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then
+* As you can see above what I have done. I've replaced transfer commands in 
+ 
+ if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "**REPLACED COMMANDS**") == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then
  
  -> Now just look at this
 
