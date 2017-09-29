@@ -185,7 +185,7 @@ if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "76,0,32,33,164,5
 
 * **As you can see above what I have done. I've replaced transfer commands in** 
  
-``` if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", ```"**REPLACED COMMANDS or copy pasted avove shown line**"```) == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then```
+``` if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", ```"**REPLACED COMMANDS/paste above coiped lines**"```) == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then```
 
 _Please just replace your system.new.transfer list "new" values with updateR-script "if range_sha1" values_
  
