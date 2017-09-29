@@ -247,5 +247,5 @@ endif;
 ## NOTE  
 _Please Ignore the grammer or Typos as English is not my native Language!_
 
-**_And yes if you think this method is usless then please don't use it , don't comment , I have tried my best to write this script for 
+**_And yes if you think this method is useless then please don't use it , don't comment , I have tried my best to write this script for 
 noobs to understand how to edit updater-script._**  -PEACE, matrixex 
