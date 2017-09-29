@@ -61,7 +61,7 @@ _OR_
 
 - And_PDA (Imagextractor binary)
 
-- xpirit  (sdat2img.py script)
+- xpirit  (sdat2img.py script): https://github.com/xpirt/sdat2img
  
  Latest Changelog : https://github.com/matriex/System_Extractor-WIN/commit/b6f099ddc381a8a52da0ba870dc12eb0e02e14cf
                  
