@@ -106,7 +106,7 @@ erase 12,66050,97792,131586,163328,186056,196096,197122,228864,229971,261632,262
    
  5)Then copy "file_contexts" from ROM to current directory(Current directory=Where you have palced extractor.bat)
    
-##INFO.
+## SOME INFO.
 * A "CUSTOM" ROM ZIP CONTAINS
 ```
 
