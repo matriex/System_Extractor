@@ -247,7 +247,10 @@ endif;
 
 * **You can clearley point out difference between _INITIAL_ updater-script(see start of guide) and _FINAL_ upater-script (above)**
 
-* The both "range_sha1" line is same in **final** and their **SHA-1** values too
+* The both "range_sha1" line in **INITIAL updateR-script** and **FINAL updateR-script** differs
+
+* Also in final script both the "**SHA-1**" value become equals to each other and ther transfer commands values too
+ (refer to xpirit guide for transfer commands)
 
 * That's all save updateR-script, repack ROM to ZIP(Use Winrar)and sign xyz_ROM.zip(optional) for official Recovery , for TWRP do not sign the file, disable zip signing from settingsof TWRP
 
