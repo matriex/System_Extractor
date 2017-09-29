@@ -254,7 +254,7 @@ endif;
 
 * That's all save updateR-script, repack ROM to ZIP (Use Winrar) and sign xyz_ROM.zip (optional) for official Recovery , for TWRP do not sign the file, disable zip signing from settings of TWRP
 
-* Then flash it, and try to wait for 5 minutes to boot (be patience), if works then good to go else :(
+* Then flash it, and try to wait for 5 minutes to boot (be patience), if works then good to go else retry or :(
 
 **I hope though you got it , comment if you need help, or confused in this**
 
