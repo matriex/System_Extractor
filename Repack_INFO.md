@@ -170,11 +170,11 @@ if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "76,0,32,33,164,5
 
 ```
 
-* As you can see above what I have done. I've replaced transfer commands in 
+### As you can see above what I have done. I've replaced transfer commands in 
  
 ``` if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", ```"**REPLACED COMMANDS**"```) == "16902dcea1b74f8c9451cb2245c51465d949ec7e" then```
  
-* Now just look at this
+### Now just look at this
 ```
 ........,129023") == "0b20303394271424267e36a0ce7573f1b62ddc0d" then
 
