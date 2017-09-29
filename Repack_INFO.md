@@ -44,7 +44,7 @@ else
    abort("system partition has unexpected non-zero contents after OTA update");
 endif;
 ```
-**As you can see there is "if range_sha1" on the script, see below eg.
+* As you can see there is "if range_sha1" on the script, see below eg.
 ```
  
 if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "36,0,32770,32849,32851,33331,65535,65536,65538,98304,98306,98385,98387,98867,131071,131072,131074,163840,163842,163921,163923,164403,185342,196608,196610,229376,229378,229457,229459,262144,262146,294912,294914,294993,294995,295475,307199") == "0b20303394271424267e36a0ce7573f1b62ddc0d" then
