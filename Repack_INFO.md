@@ -62,12 +62,14 @@ if range_sha1("/dev/block/platform/msm_sdcc.1/by-name/system", "48,32770,32849,3
   ```
   "0b20303394271424267e36a0ce7573f1b62ddc0d" 
   ``` 
-  is equal to sha1 **"sum"** (**SHA-1 value or Secure Hash Algorithm 1 value**) of system.new.dat and 
+  is equal to **SHA-1 value**  of system.new.dat and 
   ```
   "16902dcea1b74f8c9451cb2245c51465d949ec7e"
   ```
-  is also equal to another sha1 **"sum"** of system.new.dat
- 
+  is also equal to **SAH-1 value** of same **system.new.dat**
+  
+  (**SHA-1 value or Secure Hash Algorithm 1 value**)
+  
  * And Double **SHA-1** value of a single file is not possible or I don't know. So either these two values might of different things(files/or maybe numbers).
  
 
