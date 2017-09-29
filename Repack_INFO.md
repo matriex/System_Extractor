@@ -100,13 +100,13 @@ erase 12,66050,97792,131586,163328,186056,196096,197122,228864,229971,261632,262
 
 * Choose option 2 "**Repack system.new.dat**"
  
-* Choose **1(manual mode)** --> **Repack ( file_contexts is required)**
+* Choose **1 (manual mode)** --> **Repack ( file_contexts is required)**
  
 * Copy your sub folders for example:- addon.d, app, bin, fonts, framework, buile.prop, etc., to system folder (this message will also displayed in extractor).
    
-* Then place **"file_contexts"** besie system folder
+* Then place **"file_contexts"** beside system folder
    
-## SOME INFO.
+### Some info. on ROM zip 
 * A "CUSTOM" ROM ZIP CONTAINS
 ```
 
@@ -114,7 +114,7 @@ erase 12,66050,97792,131586,163328,186056,196096,197122,228864,229971,261632,262
    
 *   META-INF              (FOLDER)
    
-*  install               (FOLDER)
+*   install               (FOLDER)
    
 *   system.transfer.list  (FILE)
    
@@ -129,19 +129,19 @@ erase 12,66050,97792,131586,163328,186056,196096,197122,228864,229971,261632,262
 ```
 _(In Stock ROM, may be another files are present)_
 
-   (FOR MARSHMALLOW AN LOLLIPOP) If you unable to find it(file_contexts) in zip file then extract ramdisk from boot.img
-   look for "file_contexts" inside ramdisk folder(don't ask me how , search xda) or try to explore your ROM->device source
+   **(FOR MARSHMALLOW AN LOLLIPOP)** If you unable to find it(file_contexts) in zip file then extract ramdisk from boot.img
+   and look for "file_contexts" inside ramdisk folder(don't ask me how , search xda) _or_ try to explore your ROM->device source
 
-   IMP : Don not use other "file_contexts" or dummy "file_contexts" , it can cause device to loop 
+   _IMP : Don not use other "file_contexts" or dummy "file_contexts" , it can cause device to loop_ 
  
- 6)Hit enter if you have done above 
+* Hit enter if you have done above 
  
- 7)The extractor creates three files as output :-
-   
+* The extractor creates three files as output :-
+ ```  
    system.new.dat
    system.transfer.list
-   sha1_system.txt      -->  sha1_sum of system.new.dat
-  
+   sha1_system.txt      -->  A new fresh **SHA-1** value of system.new.dat
+ ```
  9)Now copy system.new.dat system.transfer.list to ROM folder
  
  10)Here in my case I get all files as mentioned 
