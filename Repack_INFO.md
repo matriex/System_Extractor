@@ -1,4 +1,4 @@
-# Repack instructions for "system.new.dat" Cynogenmod   
+# Repack for "system.new.dat" Cynogenmod   
 
 * Read this only in github for better view.
 * Repack "may or may not" work with all ROM.
