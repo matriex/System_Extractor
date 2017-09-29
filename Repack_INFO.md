@@ -1,9 +1,9 @@
-# Repack for "system.new.dat" Cynogenmod   
-
-* Read this only in github for better view.
-* Repack "may or may not" work with all ROM.
-* This guide is not for official or Stock ROM. 
-* I don't think I will be able to provide any repack GUIDE for #NOUGHT(or try below method if it works)
+# Guide for repack   
+ 
+_Read this only in github for better view.
+_Repack "may or may not" work with all ROM.
+_This guide is not for official or Stock ROM. 
+_I don't think I will be able to provide any repack GUIDE for #NOUGHT(or try below method if it works)
 
 ## INFORMATION 
 
@@ -247,5 +247,5 @@ endif;
 ## NOTE  
 _Please Ignore the grammer or Typos as English is not my native Language!_
 
-**_And yes if you think this method is useless then please don't use it , don't comment , I have tried my best to write this script for 
+**_And yes if you think this method is useless then please don't use it , don't comment , I have tried my best to write this guide for 
 noobs to understand how to edit updater-script._**  -PEACE, matrixex 
