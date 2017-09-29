@@ -7,12 +7,15 @@ _and I don't think I will be able to provide any repack GUIDE for NOUGHT(or try 
 
 ## INFORMATION 
 
-  If you are using cyanogenmod ROM , you may found something in updateR-script which is not found in others, That is  
-  ``` "if range_sha1(........." ```
-  this executs in script after extraction of system.new.dat , which verifies sah 1 values of system.new.dat, if values are same, the scripts succeeds and the flashing completes , if not then the script returns 
-   ```"abort("system partition has unexpected non-zero contents after OTA update");"```
-  This problem can be solved by changing the old values of system.new.dat with current one and here is how to do it.
+  _If you are using cyanogenmod ROM , you may found something in updateR-script, That is  
+  **"if range_sha1(........."**
+  this executs in script after extraction of system.new.dat to **"system partition"** , which verifies **SAH-1** values of system.new.dat, if values are same, the scripts succeeds and the flashing completes , if not then the script returns 
+   **"abort("system partition has unexpected non-zero contents after OTA update");"**
+  This problem can be solved by changing the old values of system.new.dat with current one and here is how to do it._
 
+* **"if range_sha1(........."** == _a line found in updateR-script of android 6.x ROM's_
+* **SHA-1** (Secure Hash Algorithm **1**)
+* **system partition** partition where your OTA flashes files
 * If your updateR-script do not contain above lines then don't follow this guide, simply just replace your old files with recently created ones (old-files=system.new.dat, system.transfer.list) 
 
 ## Download these for further need
