@@ -28,27 +28,31 @@ bin\cecho        {0f}Select a task :{#}
 echo.
 echo      =-=-=-=-=-=-=-=-=-=
 echo.
-bin\cecho       1 - {0b}Unpack{#} {0f}system.new.dat{#}
+bin\cecho       1 - {0b}Unpack{#} {0f}system.new.dat.br{#}
 echo.
 echo.
-bin\cecho       2 - {0b}Repack{#} {0f}system.new.dat{#}
+bin\cecho       2 - {0b}Unpack{#} {0f}system.new.dat{#}
 echo.
 echo.
-bin\cecho       3 - {0b}Unpack{#} {0f}system.img{#}
+bin\cecho       3 - {0b}Repack{#} {0f}system.new.dat{#}
 echo.
 echo.
-bin\cecho       4 - {0b}Sign{#} {0f}ZIP files{#}
+bin\cecho       4 - {0b}Unpack{#} {0f}system.img{#}
 echo.
 echo.
-bin\cecho       5 - {0b}Exit{#}  
+bin\cecho       5 - {0b}Sign{#} {0f}ZIP files{#}
+echo.
+echo.
+bin\cecho       6 - {0b}Exit{#}  
 echo.
 echo.
 set /p web=Type option:
-if "%web%"=="1" goto extractor
-if "%web%"=="5" goto ex_t
-if "%web%"=="2" goto repack
-if "%web%"=="3" goto Image_unpack
-if "%web%"=="4" goto sign
+if "%web%"=="1" goto brotli
+if "%web%"=="2" goto extractor
+if "%web%"=="3" goto repack
+if "%web%"=="4" goto Image_unpack
+if "%web%"=="5" goto sign
+if "%web%"=="6" goto ex_t
 echo.
 echo Select a valid option.....
 echo ping -n 200 -w 200 127.0.0.1 > nul
@@ -67,58 +71,120 @@ cls
     echo   /                                                  /
     bin\cecho   /  Copy {0a}"system.new.dat"{#} , {0a}"system.transfer.list"{#}  /
     echo.
-    echo   /  to current folder or %cd%                              / 
+    echo   /  to current folder or %cd%
     echo   /                                                  /
     echo   ////////////////////////////////////////////////////
     echo.
-    Echo   Hit Enter to continue &pause>nul
+    echo   Hit Enter to continue &pause>nul
     cls
       if not exist system.new.dat (cls
                                    echo.
-								   echo.
-                                   bin\cecho       {0a}"system.new.dat"{#} is not found
                                    echo.
-								   echo.
+                                   bin\cecho       {0c}"system.new.dat"{#} is not found
+                                   echo.
+                                   echo.
                                    echo    Please copy system.new.dat to current folder
                                    echo.
-								   set /a web=0
+                                   set /a web=0
                                    pause>nul
                                    goto home
                                   ) 
       if not exist system.transfer.list (cls
                                          echo.
-                                         bin\cecho      {0a}"system.transfer.list"{#} is not found
+                                         bin\cecho      {0c}"system.transfer.list"{#} is not found
                                          echo.
-										 echo.
+                                         echo.
                                          echo     Please copy system.transfer.list to current folder
                                          echo.
-										 set /a web=0
+                                         set /a web=0
                                          pause>nul
                                          goto home
-	                                    )
+                                        )
       echo.
       if not exist file_contexts (
                                   echo #DUMMY FILE >> file_contexts
                                  )
-	  echo.
+      echo.
       echo.
       if exist system.new.dat (  
-						        bin\cecho   {0c}Found system.new.dat{#}
+                                bin\cecho   {0a}Found system.new.dat{#}
                                 echo.
                                 if exist system.transfer.list (                  
-						                                       bin\cecho   {0c}Found system.transfer.list{#}
+                                                               bin\cecho   {0a}Found system.transfer.list{#}
                                                                echo. 
                                                               )
-		                      )
-	  echo.
+                              )
       echo.
-      Echo   Hit Enter to continue &pause>nul
-	  echo.
-	  echo.
+      echo.
+      echo   Hit Enter to continue &pause>nul
+      echo.
+      echo.
       echo converting "system.new.dat" to "system.img.ext4"
   echo.
-  python --version 2>NUL 
-goto ans%ERRORLEVEL%  
+  python --version 2>NUL
+goto ans%ERRORLEVEL% 
+
+:brotli
+  cls
+  echo.
+    echo   ////////////////////////////////////////////////////
+    echo   /                                                  /
+    bin\cecho   / Copy {0a}"system.new.dat.br"{#}, {0a}"system.transfer.list"{#} /
+    echo.
+    echo   /  to current folder or %cd% 
+    echo   /                                                  /
+    echo   ////////////////////////////////////////////////////
+    echo.
+    echo   Hit Enter to continue &pause>nul
+    cls
+      if not exist system.new.dat.br (cls
+                                   echo.
+                                   echo.
+                                   bin\cecho       {0c}"system.new.dat.br"{#} is not found
+                                   echo.
+                                   echo.
+                                   echo    Please copy system.new.dat.br to current folder
+                                   echo.
+                                   set /a web=0
+                                   pause>nul
+                                   goto home
+                                  ) 
+      if not exist system.transfer.list (cls
+                                         echo.
+                                         bin\cecho      {0c}"system.transfer.list"{#} is not found
+                                         echo.
+                                         echo.
+                                         echo     Please copy system.transfer.list to current folder
+                                         echo.
+                                         set /a web=0
+                                         pause>nul
+                                         goto home
+                                        )
+      echo.
+      if not exist file_contexts (
+                                  echo #DUMMY FILE >> file_contexts
+                                 )
+      echo.
+      echo.
+      if exist system.new.dat.br (  
+                                bin\cecho   {0a}Found system.new.dat.br{#}
+                                echo.
+                                if exist system.transfer.list (                  
+                                                               bin\cecho   {0a}Found system.transfer.list{#}
+                                                               echo. 
+                                                              )
+                              )
+      echo.
+      echo.
+      echo   Hit Enter to continue &pause>nul
+      echo.
+      echo.
+      echo Converting "system.new.dat.br" to "system.new.dat"
+  echo.
+  brotli.exe --decompress --in system.new.dat.br --out system.new.dat
+  echo Converted
+  python --version 2>NUL
+  goto ans%ERRORLEVEL%
 
 :ans0
   echo.
@@ -128,33 +194,43 @@ goto ans%ERRORLEVEL%
   bin\cecho   {e0} Unpacking System.new.dat {#}
   echo.
   echo.
-  bin\python\sdat2img.py system.transfer.list system.new.dat system.img.ext4
+  python bin\python\sdat2img.py system.transfer.list system.new.dat system.img.ext4
   IF EXIST system.img.ext4 goto conv_rt
 
 :ans9009
   echo.
   echo.
   echo.     Python not found!
-  echo.     Switching sdat2img.py to spars2ext.exe    
+  echo.     Switching sdat2img.py to sdat2img.exe    
   echo.
   bin\sdat2img.exe system.transfer.list system.new.dat file_contexts
   IF EXIST system.img.ext4 goto conv_rt
   
 :conv_rt
-echo converting "system.img.ext4" to "system"
+echo Converting "system.img.ext4" to "system"
                if not exist system.img.ext4 goto datstop 
-               REN system.img.ext4 *.img 
-               bin\Imgextractor.exe system.img.img -i
-               del system.img.img
+               pause
+               REN system.img.ext4 system.img
+               bin\Imgextractor.exe system.img
+               echo  If the extraction failed then install Python and try again:)
+               del system.img
                del system.new.dat
+               del system.new.dat.br
+               IF EXIST system__statfile.txt del system__statfile.txt
                del system.transfer.list 
-			   del file_contexts
-			   echo.
-			   echo.
-			   echo.
-if exist system_ bin\cecho   {e0} Files are Found in system_ folder {#}
+               del file_contexts
+               echo.
+               echo.
+               echo.
+               ( dir /b /a "system_" | findstr . ) > nul && ( 
+                                                             bin\cecho   {e0} Files are Found in system_ folder {#} 
+                                                            ) || (
+                                                             echo Error
+                                                             pause
+                                                             goto home
+                                                            )
                  echo.
-				 echo.
+                 echo.
                  set /a web=0
 pause
 goto home
