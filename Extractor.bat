@@ -216,7 +216,6 @@ echo Converting "system.img.ext4" to "system"
                del system.img
                del system.new.dat
                IF EXIST system.new.dat.br del system.new.dat.br
-               IF EXIST system__statfile.txt del system__statfile.txt
                del system.transfer.list 
                del file_contexts
                echo.
