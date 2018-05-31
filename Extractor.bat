@@ -215,7 +215,7 @@ echo Converting "system.img.ext4" to "system"
                echo  If the extraction failed then install Python and try again:)
                del system.img
                del system.new.dat
-               del system.new.dat.br
+               IF EXIST system.new.dat.br del system.new.dat.br
                IF EXIST system__statfile.txt del system__statfile.txt
                del system.transfer.list 
                del file_contexts
