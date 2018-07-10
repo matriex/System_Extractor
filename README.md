@@ -1,6 +1,6 @@
 # System_Extractor
 
-## Discription
+## Description
 
 This extractor is for extracting system.new.dat in easy method without using commandline ,It is a set of commands which is written in batch script to speed up extraction of dat and IMG* files
 
@@ -8,14 +8,14 @@ This extractor is for extracting system.new.dat in easy method without using com
 (*Every image files can't be extracted with this extractor ,because image binary has its limit)
 
 
-## Requirments
+## Requirements
 
  * Python 2.7.x version must be installed , (latest build of 2.7.x, DO NOT USE PYTHON 3.x)
 
  * Java Development kit or JAVA SDK must be installed for ZIP signing
 
 
-## Note
+## Notes
 
  * Repack for android nougat N does not works
  
@@ -53,7 +53,7 @@ _OR_
                                                      
      https://codeload.github.com/matriex/System_Extractor/zip/master
  
-## Contributers
+## Contributors
  
 - tsvietOK
 
