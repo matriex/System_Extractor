@@ -68,7 +68,11 @@ _OR_
 
 - xpirit  (sdat2img.py script): https://github.com/xpirt/sdat2img
  
- Latest Changelog : https://github.com/matriex/System_Extractor-WIN/commit/b6f099ddc381a8a52da0ba870dc12eb0e02e14cf
+ Latest Changelog 
+ 
+: https://github.com/matriex/System_Extractor-WIN/commit/f471d9aac79f09ed8877dc4d8e65083ffafde421 
+
+: https://github.com/matriex/System_Extractor-WIN/commit/b6f099ddc381a8a52da0ba870dc12eb0e02e14cf
                  
 : https://github.com/matriex/System_Extractor-WIN/commit/d6626c20c2e7573cff5923e2ca843f041385892d
        
