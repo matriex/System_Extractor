@@ -17,9 +17,12 @@ This extractor is for extracting system.new.dat in easy method without using com
 
 ## Notes
 
- * Repack for android nougat N does not works
+ * Added brotli support.
  
- * Repack of CM13 works fine 
+ * Repack for android nougat N does not works, The repack process is complicated and cannot be automated
+   with the script better look for guide.
+ 
+ * Repack of CM13, CM14 works fine- CM15 YET TO BE TESTED 
   
  * Image repack does not works and will be removed from next script 
  
@@ -41,7 +44,7 @@ This extractor is for extracting system.new.dat in easy method without using com
  
 * SCRIPT :4.0 ~ 4.x
 
- -> Extract, Repack, System Unpack , Sign ZIP. 
+ -> Extract, Repack, System Unpack , Sign ZIP, Brotli. 
    Aready Uploaded New Script 
  
  
