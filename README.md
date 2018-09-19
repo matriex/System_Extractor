@@ -28,6 +28,10 @@ This extractor is for extracting system.new.dat in easy method without using com
  
  * Check xda thread for more INFO.
 
+## External help links 
+
+ * Lineage OS help: https://wiki.lineageos.org/extracting_blobs_from_zips.html
+ 
 ## Released scripts
 
 * SCRIPT : 1.0 (initial)
@@ -40,7 +44,7 @@ This extractor is for extracting system.new.dat in easy method without using com
  
 * SCRIPT : 3.0
 
- -> Extract, Repack, System Unpack.
+ -> Extract, Repack, System Unpck.
  
 * SCRIPT :4.0 ~ 4.x
 
